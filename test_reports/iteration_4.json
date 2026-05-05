@@ -1,0 +1,28 @@
+{
+  "summary": "Iteration 4 (dark mode + iteration-3-PDF layout fixes) frontend e2e verified end-to-end. All 16 review checkpoints PASS. Site loads with 0 console errors. THEME TOGGLE: data-testid='theme-toggle' visible top-right of header — clicking toggles `dark` class on <html> (verified true after click), persists in localStorage key 'em-theme' as 'dark'/'light', and persists across navigation (/about still has dark class). DARK MODE COLORS: header bg = rgb(12,10,9) (stone-950), body bg = rgb(14,13,12) — true dark mode applied. HEADER: slim Learn dropdown menu width 200px with ONLY 2 text-only links (problem-profiles, resources), no descriptions, no large rounded boxes — matches effectivealtruism.org thin-list style. FOOTER: newsletter-form / newsletter-email / 'More ideas on how to make a difference' all REMOVED. Footer still shows Site map (Home/Cause Areas/Resources/About/Take Action/Contact), Inspired By (3 partners), Connect (GitHub Forum + Contact us), and copyright line. HOME: hero-video plays; h1 scales responsively (36px @ 390px viewport, 88px @ desktop). Marquee shows math symbols BEFORE labels: ∑ BIOSECURITY · ∫ AI SAFETY · ∂ GLOBAL PRIORITIES · π DECISION THEORY · ∇ FORECASTING · λ CLIMATE RISK · Ω CATASTROPHIC RISK (verified). definition-section has data-testid='definition-sigma' (∑) low-opacity watermark in background. testimonials-section: 4 testimonials cycle correctly via testimonial-prev/next arrows (Dr. Rachel Glennerster → Mira Khan via next, back via prev), 4 dot indicators present, current dot is wider/orange. 'Find a way to begin' / way-0 section is COMPLETELY REMOVED — home now ends with testimonials carousel as specified. /learn/cause-areas: NO 'Top priority' / 'High priority' / 'Medium-high & emerging' kicker headers — single ungrouped grid contains all 8 cause-area cards (grid children count = 8). /about: theory-of-change parent present + all 8 alternating side-image blocks (toc-block-0..toc-block-7) confirmed, 'Fig. 0' captions present. /contact: form is the ONLY thing on the page — no 'Office hours' / 'Remote' sidebar text. Form is centered (text-center headline 'Write to us'). Form submit (Test User/email/message) successfully shows form-success-state ('Thank you — message received'). Mobile (390px) hero video sizes correctly to 390x803. All testids resolved as specified.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Theme toggle correctly uses localStorage key 'em-theme' and applies the `dark` class on <html>. ThemeToggle.jsx applies theme on mount, avoiding FOUC for first paint (acceptable for prototype; production might prefer pre-paint inline script).",
+    "Contact form remains a frontend-only state transition (MOCKED — clearly disclosed in review request). // note banner on the page already informs user 'this is a prototype form'.",
+    "Hero video is unchanged from iter 3 per request. Mobile responsiveness: h1 scales to text-4xl (36px) at 390px viewport — readable.",
+    "Footer newsletter section was successfully removed entirely (no orphan testids). Mobile menu dark-mode classes (border + bg) applied.",
+    "Theory-of-change rebuild: 8 alternating side-image blocks verified (toc-block-0..7), each with figure caption ('Fig. 01 · ...'). Layout breaks the previous narrow centered-article pattern as required.",
+    "CauseAreas.jsx renders a single .grid with 8 children — no priority tier kickers anymore.",
+    "Marquee math symbols rendered using font-serif-display orange-300 spans before each label as specified. Carousel correctly cycles modulo total."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (not tested per request)", "frontend": "100%"},
+  "test_credentials": "Not applicable — no auth",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Iter 4 — dark mode + 11 PDF changes fully verified. Key new testids: theme-toggle, definition-sigma, testimonials-section, testimonial-prev/next, testimonial-portrait, testimonial-name, testimonial-dots, theory-of-change, toc-block-0..7. Removed (and confirmed absent): newsletter-form, newsletter-email, way-0..3 (begin section on home), 'Top priority/High priority/Medium' kickers on cause-areas, Office hours/Remote/Email sidebar on contact. Theme persists in localStorage('em-theme'). Default = light. Marquee items array now stores {sym,label} pairs in /app/frontend/src/pages/Home.jsx. Contact form remains mocked (frontend-only state transition). Hero on home is unchanged from iter 3 (Pexels CDN MP4). 0 console errors across home, cause-areas, about, contact. Light/dark both readable; cream sections become stone-900 in dark. Backend untouched and untested per request.",
+  "rca of the issue": "No issues found."
+}

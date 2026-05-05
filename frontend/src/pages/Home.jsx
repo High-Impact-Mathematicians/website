@@ -1,0 +1,612 @@
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import EASectionHeader from "../components/EASectionHeader";
+import EACard from "../components/EACard";
+import Modal from "../components/Modal";
+import { CAUSE_AREAS } from "../data/causeAreas";
+
+const HERO_VIDEO_FALLBACK = `${process.env.PUBLIC_URL}/hero-bg.mp4`;
+const HERO_VIDEO_MANIFEST = `${process.env.PUBLIC_URL}/hero-videos/playlist.json`;
+const HERO_VIDEO_DURATION_MS = 6000;
+const HERO_VIDEO_FADE_MS = 80;
+const HERO_POSTER =
+  "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1920&q=80";
+
+function toHeroVideoUrl(videoPath) {
+  if (!videoPath) {
+    return null;
+  }
+
+  if (videoPath.startsWith("http://") || videoPath.startsWith("https://") || videoPath.startsWith("/")) {
+    return videoPath;
+  }
+
+  return `${process.env.PUBLIC_URL}/hero-videos/${videoPath}`;
+}
+
+function shuffleVideos(videoUrls) {
+  const shuffled = [...videoUrls];
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+  }
+
+  return shuffled;
+}
+
+function getRandomNextIndex(currentIndex, total) {
+  if (total <= 1) {
+    return 0;
+  }
+
+  let nextIndex = currentIndex;
+
+  while (nextIndex === currentIndex) {
+    nextIndex = Math.floor(Math.random() * total);
+  }
+
+  return nextIndex;
+}
+
+async function discoverHeroVideosFromFolder() {
+  const foundVideos = [];
+  const fileExtensions = ["mp4", "webm", "mov"];
+
+  for (let index = 1; index <= 20; index += 1) {
+    for (const extension of fileExtensions) {
+      const candidateUrl = `${process.env.PUBLIC_URL}/hero-videos/${index}.${extension}`;
+
+      try {
+        const response = await fetch(candidateUrl, {
+          cache: "no-store",
+          method: "HEAD",
+        });
+
+        if (response.ok) {
+          foundVideos.push(candidateUrl);
+        }
+      } catch {
+        // Ignore missing files and keep probing.
+      }
+    }
+  }
+
+  return foundVideos;
+}
+
+const MARQUEE_ITEMS = [
+  { sym: "∑", label: "Biosecurity" },
+  { sym: "∫", label: "AI Safety" },
+  { sym: "∂", label: "Game Theory" },
+  { sym: "π", label: "Modelling" },
+  { sym: "λ", label: "Climate Change" },
+  { sym: "Ω", label: "Existential Risks" },
+];
+
+const TESTIMONIALS = [
+  {
+    quote: "Many of the concepts here will be familiar to mathematicians. What's unusual is to see those tools used to develop a practical guide on how to point a career — it doesn't tell you what to do; it sets out a framework for thinking it through.",
+    name: "Dr. Rachel Glennerster",
+    role: "Associate Professor, paraphrased",
+    portrait: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    quote: "I'd been quietly uncomfortable with the gap between what my training was supposed to mean and what I spent most of my time doing. This community was the first place that asked, in a quantitative way, where my skills should actually go.",
+    name: "Mira Khan",
+    role: "PhD student, statistical genetics",
+    portrait: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    quote: "What I value here is the willingness to put numbers on uncomfortable questions, and the willingness to update when those numbers come back wrong. It's a rare combination.",
+    name: "Daniel Okafor",
+    role: "Bayesian modeller, public-health policy",
+    portrait: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    quote: "Coming from pure mathematics, I assumed my work was forever decoupled from the real world. The problem profiles here showed me, in detail, how wrong that assumption was.",
+    name: "Sofía Ríos",
+    role: "Postdoc, dynamical systems",
+    portrait: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80",
+  },
+];
+
+function TestimonialCarousel() {
+  const [i, setI] = useState(0);
+  const total = TESTIMONIALS.length;
+  const prev = useCallback(() => setI((x) => (x - 1 + total) % total), [total]);
+  const next = useCallback(() => setI((x) => (x + 1) % total), [total]);
+  const t = TESTIMONIALS[i];
+
+  return (
+    <section className="bg-white dark:bg-stone-950" data-testid="testimonials-section">
+      <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28 relative">
+        {/* Arrows */}
+        <button
+          type="button"
+          onClick={prev}
+          aria-label="Previous testimonial"
+          className="hidden md:flex absolute left-3 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-stone-300 dark:border-stone-700 bg-white/80 dark:bg-stone-950/80 text-stone-700 dark:text-stone-200 hover:bg-white dark:hover:bg-stone-900 hover:border-orange-500 hover:text-orange-700 dark:hover:text-orange-400 items-center justify-center transition-colors z-10"
+          data-testid="testimonial-prev"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          type="button"
+          onClick={next}
+          aria-label="Next testimonial"
+          className="hidden md:flex absolute right-3 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-stone-300 dark:border-stone-700 bg-white/80 dark:bg-stone-950/80 text-stone-700 dark:text-stone-200 hover:bg-white dark:hover:bg-stone-900 hover:border-orange-500 hover:text-orange-700 dark:hover:text-orange-400 items-center justify-center transition-colors z-10"
+          data-testid="testimonial-next"
+        >
+          <ChevronRight size={20} />
+        </button>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center md:px-12 lg:px-16">
+          <div className="md:col-span-3 flex md:justify-end">
+            <img
+              key={t.portrait}
+              src={t.portrait}
+              alt={t.name}
+              className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover em-fade-up"
+              loading="lazy"
+              data-testid="testimonial-portrait"
+            />
+          </div>
+          <blockquote className="md:col-span-9 em-fade-up" key={i}>
+            <p className="font-serif-display text-2xl md:text-[32px] leading-[1.28] text-stone-900 dark:text-stone-100">
+              "{t.quote.replace(/^"|"$/g, "")}"
+            </p>
+            <footer className="mt-6 text-stone-700 dark:text-stone-300">
+              <div className="font-medium text-stone-900 dark:text-stone-100" data-testid="testimonial-name">{t.name}</div>
+              <div className="text-sm text-stone-600 dark:text-stone-400">{t.role}</div>
+            </footer>
+          </blockquote>
+        </div>
+
+        {/* Dots + mobile arrows */}
+        <div className="mt-10 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={prev}
+            aria-label="Previous testimonial"
+            className="md:hidden w-10 h-10 rounded-full border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-200 flex items-center justify-center"
+          >
+            <ChevronLeft size={18} />
+          </button>
+          <div className="flex gap-2" data-testid="testimonial-dots">
+            {TESTIMONIALS.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setI(idx)}
+                aria-label={`Go to testimonial ${idx + 1}`}
+                className={`h-2 rounded-full transition-all ${
+                  idx === i
+                    ? "w-8 bg-orange-600"
+                    : "w-2 bg-stone-300 dark:bg-stone-700 hover:bg-stone-400 dark:hover:bg-stone-600"
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={next}
+            aria-label="Next testimonial"
+            className="md:hidden w-10 h-10 rounded-full border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-200 flex items-center justify-center"
+          >
+            <ChevronRight size={18} />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function Home() {
+  const [openCause, setOpenCause] = useState(null);
+  const [heroVideos, setHeroVideos] = useState([HERO_VIDEO_FALLBACK]);
+  const [heroVideoIndex, setHeroVideoIndex] = useState(0);
+  const [visibleSlot, setVisibleSlot] = useState(0);
+  const frontRef = useRef(null);
+  const backRef = useRef(null);
+  const currentPlayingIndexRef = useRef(0);
+  const rotationIntervalRef = useRef(null);
+  const causeAreas = Array.isArray(CAUSE_AREAS) ? CAUSE_AREAS : [];
+  const sneak = causeAreas.slice(0, 6);
+  const heroVideoSrc = heroVideos[heroVideoIndex] || HERO_VIDEO_FALLBACK;
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadHeroVideos() {
+      try {
+        const response = await fetch(HERO_VIDEO_MANIFEST, { cache: "no-store" });
+        if (response.ok) {
+          const payload = await response.json();
+          const list = Array.isArray(payload)
+            ? payload
+            : Array.isArray(payload?.videos)
+              ? payload.videos
+              : [];
+          const resolvedVideos = list.map(toHeroVideoUrl).filter(Boolean);
+
+          if (!cancelled && resolvedVideos.length > 0) {
+            setHeroVideos(shuffleVideos(resolvedVideos));
+            setHeroVideoIndex(0);
+            return;
+          }
+        }
+      } catch {
+        // Keep the fallback video when no manifest is present.
+      }
+    }
+
+    loadHeroVideos();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  function waitForCanPlay(videoElement, timeout = 2500) {
+    return new Promise((resolve) => {
+      if (!videoElement) {
+        resolve(false);
+        return;
+      }
+
+      if (videoElement.readyState >= 2) {
+        resolve(true);
+        return;
+      }
+
+      let settled = false;
+
+      const cleanup = () => {
+        videoElement.removeEventListener("loadeddata", handleReady);
+        videoElement.removeEventListener("canplay", handleReady);
+      };
+
+      const handleReady = () => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        resolve(true);
+      };
+
+      videoElement.addEventListener("loadeddata", handleReady, { once: true });
+      videoElement.addEventListener("canplay", handleReady, { once: true });
+
+      window.setTimeout(() => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        resolve(false);
+      }, timeout);
+    });
+  }
+
+  useEffect(() => {
+    const firstVideo = toHeroVideoUrl(heroVideos[0]) || HERO_VIDEO_FALLBACK;
+    const frontVideo = frontRef.current;
+    const backVideo = backRef.current;
+
+    currentPlayingIndexRef.current = 0;
+    setHeroVideoIndex(0);
+    setVisibleSlot(0);
+
+    if (frontVideo) {
+      frontVideo.src = firstVideo;
+      try {
+        frontVideo.load();
+      } catch {
+        // Ignore load failures and fall back to the browser's default handling.
+      }
+
+      void waitForCanPlay(frontVideo).then(() => {
+        frontVideo.play().catch(() => {});
+      });
+    }
+
+    if (backVideo) {
+      try {
+        backVideo.pause();
+        backVideo.removeAttribute("src");
+        backVideo.load();
+      } catch {
+        // Ignore cleanup failures.
+      }
+    }
+  }, [heroVideos]);
+
+  useEffect(() => {
+    if (heroVideos.length <= 1) {
+      return undefined;
+    }
+
+    const advanceVideo = async () => {
+      const activeSlot = visibleSlot === 0 ? frontRef.current : backRef.current;
+      const inactiveSlot = visibleSlot === 0 ? backRef.current : frontRef.current;
+
+      if (!activeSlot || !inactiveSlot) {
+        return;
+      }
+
+      const nextIndex = getRandomNextIndex(currentPlayingIndexRef.current, heroVideos.length);
+      const nextSrc = toHeroVideoUrl(heroVideos[nextIndex]);
+
+      try {
+        inactiveSlot.src = nextSrc;
+        inactiveSlot.load();
+      } catch {
+        return;
+      }
+
+      const ready = await waitForCanPlay(inactiveSlot, 3500);
+      if (!ready) {
+        return;
+      }
+
+      inactiveSlot.currentTime = 0;
+      inactiveSlot.play().catch(() => {});
+
+      currentPlayingIndexRef.current = nextIndex;
+      setHeroVideoIndex(nextIndex);
+      setVisibleSlot((slot) => (slot === 0 ? 1 : 0));
+
+      window.setTimeout(() => {
+        try {
+          activeSlot.pause();
+        } catch {
+          // Ignore cleanup failures.
+        }
+      }, HERO_VIDEO_FADE_MS + 40);
+    };
+
+    rotationIntervalRef.current = window.setInterval(() => {
+      void advanceVideo();
+    }, HERO_VIDEO_DURATION_MS);
+
+    return () => {
+      if (rotationIntervalRef.current) {
+        window.clearInterval(rotationIntervalRef.current);
+        rotationIntervalRef.current = null;
+      }
+    };
+  }, [heroVideos, visibleSlot]);
+
+  return (
+    <div data-testid="page-home">
+      {/* HERO — UNCHANGED, with math symbols added next to marquee labels and responsive tweaks */}
+      <section className="relative min-h-[88vh] flex items-center overflow-hidden" data-testid="hero-section">
+        <video
+          ref={frontRef}
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          loop={false}
+          style={{
+            opacity: visibleSlot === 0 ? 1 : 0,
+            transition: `opacity ${HERO_VIDEO_FADE_MS}ms linear`,
+          }}
+          onError={() => {
+            if (heroVideos.length > 1) {
+              setHeroVideos((currentVideos) => shuffleVideos(currentVideos));
+              setHeroVideoIndex(0);
+            }
+          }}
+          data-testid="hero-video-front"
+        />
+        <video
+          ref={backRef}
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          loop={false}
+          style={{
+            opacity: visibleSlot === 1 ? 1 : 0,
+            transition: `opacity ${HERO_VIDEO_FADE_MS}ms linear`,
+          }}
+          onError={() => {
+            if (heroVideos.length > 1) {
+              setHeroVideos((currentVideos) => shuffleVideos(currentVideos));
+              setHeroVideoIndex(0);
+            }
+          }}
+          data-testid="hero-video-back"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/45 via-stone-900/40 to-stone-900/70" />
+
+        <div className="relative w-full max-w-[1320px] mx-auto px-6 md:px-10 py-20 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end md:-translate-y-4 lg:-translate-y-6">
+          <div className="lg:col-span-8 em-fade-up">
+            <div className="font-mono-tag text-[10px] md:text-[11px] uppercase tracking-[0.28em] text-orange-300 mb-5 md:mb-6 flex items-center gap-3">
+              <span className="h-px w-8 md:w-10 bg-orange-300/70" />
+              An affinity space for mathematicians 
+            </div>
+            <h1 className="max-w-3xl font-serif-display text-white text-4xl sm:text-5xl md:text-7xl lg:text-[88px] leading-[1.02] md:leading-[0.98] tracking-tight font-medium">
+              <span className="whitespace-nowrap">Mathematics, applied</span>{" "}
+              <em className="text-orange-300 not-italic font-serif-display italic">to the problems that matter most.</em>
+            </h1>
+            <p className="mt-6 md:mt-8 max-w-2xl text-stone-100 text-base md:text-xl leading-relaxed">
+              We're a community of mathematicians that use quantitative methods to address the world's most pressing problems.
+            </p>
+            <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4">
+              <Link
+                to="/learn/cause-areas"
+                className="group inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-5 md:px-6 py-3 md:py-3.5 text-sm font-medium tracking-wide transition-colors rounded-full"
+                data-testid="hero-cta-explore"
+              >
+                Explore cause areas
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 border border-stone-200/60 text-white hover:bg-white hover:text-stone-900 px-5 md:px-6 py-3 md:py-3.5 text-sm font-medium tracking-wide transition-colors rounded-full"
+                data-testid="hero-cta-about"
+              >
+                Read our story
+              </Link>
+            </div>
+          </div>
+
+        </div>
+
+        {/* MARQUEE — math symbols next to each label */}
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-stone-900/40 backdrop-blur-sm overflow-hidden">
+          <div className="em-marquee whitespace-nowrap py-3 font-mono-tag text-xs uppercase tracking-[0.28em] text-stone-200">
+            {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((m, idx) => (
+              <span key={idx} className="mx-7 inline-flex items-center gap-2.5">
+                <span className="font-serif-display text-base normal-case tracking-normal text-orange-300">{m.sym}</span>
+                <span>{m.label}</span>
+                <span className="ml-7 text-orange-300">·</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT IS AN EFFECTIVE MATHEMATICIAN — with low-opacity sigma watermark */}
+      <section className="relative bg-white dark:bg-stone-950 overflow-hidden" data-testid="definition-section">
+        {/* Sigma watermark, low opacity */}
+        <div
+          aria-hidden
+          className="em-sigma-watermark absolute text-[400px] md:text-[640px] -right-8 md:-right-20 top-1/2 -translate-y-1/2 select-none pointer-events-none"
+          data-testid="definition-sigma"
+        >
+          ∑
+        </div>
+
+        <div className="relative max-w-[1240px] mx-auto px-6 md:px-10 py-24 md:py-32">
+          <EASectionHeader title="What is an effective mathematician?" />
+
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+            <div>
+              <h3 className="font-serif-display text-2xl md:text-[28px] text-stone-900 dark:text-stone-100 leading-tight">A discipline</h3>
+              <p className="mt-5 text-stone-700 dark:text-stone-300 text-lg leading-[1.7]">
+                Someone who treats the question <em>"what should I work on?"</em> with the same rigor they bring to a proof: using mathematics, and the careful habits of mind that come with it to identify the problems where their effort buys the most expected impact in the world.{" "}
+                <Link to="/about" className="em-link text-orange-700 dark:text-orange-400">Read more</Link>.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif-display text-2xl md:text-[28px] text-stone-900 dark:text-stone-100 leading-tight">A community</h3>
+              <p className="mt-5 text-stone-700 dark:text-stone-300 text-lg leading-[1.7]">
+                An online network of mathematicians, statisticians and quantitative thinkers, helping each other point our work at the cause areas that matter most.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INSPIRED BY */}
+      <section className="bg-white dark:bg-stone-950 border-t border-stone-200 dark:border-stone-800">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-12">
+          <div className="text-center font-mono-tag text-[11px] uppercase tracking-[0.22em] text-stone-500 dark:text-stone-500 mb-7">
+            Inspired by
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 md:gap-x-12 gap-y-5 text-stone-600 dark:text-stone-400">
+            {[
+              { l: "Effective Altruism", h: "https://www.effectivealtruism.org/" },
+              { l: "Leaf", h: "https://leaf.courses/" },
+              { l: "High Impact Professionals", h: "https://www.highimpactprofessionals.org/" },
+              { l: "80,000 Hours", h: "https://80000hours.org/" },
+            ].map((p) => (
+              <a key={p.l} href={p.h} target="_blank" rel="noreferrer" className="font-serif-display text-lg md:text-2xl text-stone-700 dark:text-stone-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
+                {p.l}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CAUSE AREAS */}
+      <section className="bg-cream dark:bg-stone-900" data-testid="cause-areas-preview">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-24 md:py-32">
+          <div className="max-w-3xl">
+            <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 mb-3">
+              Problem areas
+            </div>
+            <h2 className="font-serif-display text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.04] text-stone-900 dark:text-stone-100">
+              Where math goes to work
+            </h2>
+            <p className="mt-5 font-serif-display italic text-stone-600 dark:text-stone-400 text-xl md:text-2xl leading-snug max-w-3xl">
+              From global priorities to existential risk: see the problems where rigorous quantitative thinking is most undersupplied.
+            </p>
+            <div className="ea-rule mt-10" />
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            {sneak.map((c) => (
+              <EACard
+                key={c.slug}
+                image={c.image}
+                title={c.title}
+                source={c.short}
+                onClick={() => setOpenCause(c)}
+              />
+            ))}
+          </div>
+
+          <div className="mt-14 flex justify-center">
+            <Link
+              to="/learn/cause-areas"
+              className="inline-flex items-center gap-2 text-stone-900 dark:text-stone-100 hover:text-orange-700 dark:hover:text-orange-400 font-medium em-link"
+              data-testid="cause-areas-cta"
+            >
+              See all problem profiles <ArrowUpRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Modal open={!!openCause} onClose={() => setOpenCause(null)} labelledBy="cause-modal-title">
+        {openCause && (
+          <>
+            <div className="aspect-[21/9] overflow-hidden rounded-t-3xl">
+              <img src={openCause.image} alt={openCause.title} className="w-full h-full object-cover" />
+            </div>
+            <div className="p-8 md:p-10">
+              <div className="font-mono-tag text-[10px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400">
+                {openCause.tag} · cause area
+              </div>
+              <h3 id="cause-modal-title" className="mt-3 font-serif-display text-3xl md:text-4xl leading-[1.1] text-stone-900 dark:text-stone-100">
+                {openCause.title}
+              </h3>
+              <p className="mt-5 text-stone-700 dark:text-stone-300 text-lg leading-relaxed font-serif-display italic">
+                {openCause.short}
+              </p>
+              <p className="mt-5 text-stone-700 dark:text-stone-300 leading-relaxed">{openCause.why}</p>
+              <div className="mt-8">
+                <div className="font-mono-tag text-[10px] uppercase tracking-[0.22em] text-stone-500 dark:text-stone-500 mb-3">
+                  Open work mathematicians can take on
+                </div>
+                <ul className="space-y-2">
+                  {openCause.work.map((w) => (
+                    <li key={w} className="flex items-start gap-3 text-stone-800 dark:text-stone-200">
+                      <span className="font-mono-tag text-orange-600 dark:text-orange-400 mt-1">→</span>
+                      <span>{w}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <Link to="/learn/cause-areas" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-5 py-3 text-sm font-medium rounded-full transition-colors">
+                  See all problem profiles <ArrowRight size={15} />
+                </Link>
+                <Link to="/take-action" className="inline-flex items-center gap-2 border border-stone-300 dark:border-stone-700 hover:border-stone-900 dark:hover:border-stone-200 text-stone-900 dark:text-stone-100 px-5 py-3 text-sm font-medium rounded-full transition-colors">
+                  Get involved
+                </Link>
+              </div>
+            </div>
+          </>
+        )}
+      </Modal>
+
+      {/* TESTIMONIALS CAROUSEL */}
+      <TestimonialCarousel />
+    </div>
+  );
+}

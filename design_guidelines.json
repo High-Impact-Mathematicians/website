@@ -1,0 +1,75 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) blended with Archetype 1 (Organic/Academic Warmth)",
+  "colors": {
+    "background": "#F9F8F6",
+    "surface": "#FFFFFF",
+    "primary": "#EA580C",
+    "primary_hover": "#C2410C",
+    "text_main": "#1C1917",
+    "text_muted": "#57534E",
+    "border": "#D6D3D1",
+    "accent_subtle": "#FFEDD5"
+  },
+  "typography": {
+    "heading_font": "Cormorant Garamond",
+    "body_font": "IBM Plex Sans",
+    "mono_font": "JetBrains Mono",
+    "rules": {
+      "h1": "text-5xl md:text-6xl tracking-tighter font-medium text-white",
+      "h2": "text-4xl md:text-5xl tracking-tight font-medium text-stone-900",
+      "h3": "text-2xl md:text-3xl font-medium text-stone-900",
+      "body": "text-base md:text-lg leading-relaxed text-stone-700",
+      "labels": "font-mono text-xs uppercase tracking-[0.2em] text-orange-600 font-semibold"
+    }
+  },
+  "layout_and_spacing": {
+    "strategy": "Grid Borders (Technical Look) & Editorial Text Rhythms",
+    "spacing_scale": "Generous (p-8 to p-16) to evoke academic textbook margins",
+    "border_radius": "rounded-none or rounded-sm for a sharp, structural math aesthetic",
+    "grid_system": "Bento Grid (Control Room Mode) with visible 1px borders for Cause Areas and Resources"
+  },
+  "surface_strategies": {
+    "cards": "Flat background (bg-white or bg-stone-50), crisp 1px border (border-stone-300), no drop shadows. On hover, translate-y-[-2px] and subtle shadow-sm.",
+    "header": "Solid bg-stone-50/90 with backdrop-blur-md, bottom border border-stone-300",
+    "buttons": "Sharp corners. Primary: bg-orange-600 text-white hover:bg-orange-700. Secondary: border border-stone-300 bg-transparent text-stone-900 hover:bg-stone-100."
+  },
+  "media": {
+    "hero_video": "https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1704162925787-8a2511b51461?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwzfHxtYXRoZW1hdGljcyUyMG5hdHVyZSUyMHBhdHRlcm5zfGVufDB8fHx8MTc3NzgxODgzNXww&ixlib=rb-4.1.0&q=85",
+        "category": "cause_areas_biosecurity",
+        "description": "Mathematical nature pattern"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1636990729669-70b389c7662a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwxfHxtYXRoZW1hdGljcyUyMG5hdHVyZSUyMHBhdHRlcm5zfGVufDB8fHx8MTc3NzgxODgzNXww&ixlib=rb-4.1.0&q=85",
+        "category": "cause_areas_ai_safety",
+        "description": "Metal structure close up / network"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1714976327534-18e4ab9a85ce?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwyfHxwZW9wbGUlMjBjb2xsYWJvcmF0aW5nJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc3NzgxODgzNXww&ixlib=rb-4.1.0&q=85",
+        "category": "about_community",
+        "description": "People collaborating"
+      }
+    ],
+    "logo_instructions": "Create an inline SVG representing a light bulb with a heart inside. Use stroke-width='1.5', stroke='currentColor'. Minimalist line-art style to match the mathematical/editorial vibe."
+  },
+  "components": {
+    "navigation": "Sticky header with z-50. Logo left, Links center, 'Take Action' CTA right. Use Shadcn DropdownMenu for 'Learn' dropdown.",
+    "hero": "80vh to 100vh. Video background with dark overlay (bg-stone-900/70) to ensure text legibility. Large H1 text in White. Use a monospace accent tag in orange above the heading.",
+    "cause_areas": "Use bento grid cards (Grid cols 1 md:cols-2). Each card has an image (max-h 200px), an overline, a title, and a snippet. Include the ITN (Importance, Tractability, Neglectedness) framework using small pill badges or monospace data rows.",
+    "resources": "Dense grid layout. Differentiate formats (Book, Article, Podcast) using Lucide icons. Minimalist text.",
+    "theory_of_change": "Use Flexbox/Grid to create a flow diagram layout. Boxes connected by decorative SVG arrows or mathematical operators (→, ∑) using JetBrains Mono font.",
+    "contact_form": "Use Shadcn Form, Input, Textarea. Minimalist styling, sharp square borders (rounded-none)."
+  },
+  "icons": "lucide-react",
+  "instructions_to_main_agent": [
+    "Install custom fonts from Google Fonts: Cormorant Garamond, IBM Plex Sans, JetBrains Mono.",
+    "Implement the layout with strict grid alignments. Use a 1px border grid system for the 'Theory of Change' and 'Cause Areas' to emphasize structure.",
+    "Use standard HTML5 <video autoPlay loop muted playsInline> for the hero background, with object-fit: cover.",
+    "Add 'data-testid' to all buttons, links, and forms.",
+    "Do NOT use generic gradients. Keep colors flat, borders crisp. Use a subtle repeating linear-gradient to create a faint grid paper effect (bg-[linear-gradient...]) in the background of structural sections.",
+    "Orange (#EA580C) must be used thoughtfully as an accent and CTA color, not as a blanket background, to maintain the sophisticated academic feel."
+  ]
+}
