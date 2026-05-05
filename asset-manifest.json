@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c54dd3d5.css",
+    "main.js": "/static/js/main.d8c59260.js",
+    "static/media/climate-change.jpg": "/static/media/climate-change.916020d61aff3ea959ac.jpg",
+    "static/media/global-health.jpg": "/static/media/global-health.721b260d892eff52a550.jpg",
+    "static/media/biosecurity.jpg": "/static/media/biosecurity.b65a4fefeac8e410ed02.jpg",
+    "static/media/ai-safety.jpg": "/static/media/ai-safety.0425c41ec110d17a026c.jpg",
+    "static/media/animal-welfare.jpg": "/static/media/animal-welfare.f311533472936687994f.jpg",
+    "index.html": "/index.html",
+    "main.c54dd3d5.css.map": "/static/css/main.c54dd3d5.css.map",
+    "main.d8c59260.js.map": "/static/js/main.d8c59260.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c54dd3d5.css",
+    "static/js/main.d8c59260.js"
+  ]
+}
