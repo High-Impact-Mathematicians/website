@@ -130,6 +130,7 @@ const GROUP_LABELS = {
 };
 
 export default function Resources() {
+  const baseUrl = process.env.PUBLIC_URL || "";
   const [type, setType] = useState("All");
   const [q, setQ] = useState("");
 
@@ -253,7 +254,7 @@ export default function Resources() {
                             } rounded-md overflow-hidden transition-transform duration-300 group-hover:-translate-y-0.5`}
                           >
                             <img
-                              src={r.image}
+                              src={`${baseUrl}${r.image}`}
                               alt={r.title}
                               loading="lazy"
                               className={`w-full h-full ${isBook ? "object-contain" : "object-contain"}`}
