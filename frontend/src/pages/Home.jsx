@@ -10,6 +10,7 @@ const HERO_VIDEO_FALLBACK = `${process.env.PUBLIC_URL}/hero-bg.mp4`;
 const HERO_VIDEO_MANIFEST = `${process.env.PUBLIC_URL}/hero-videos/playlist.json`;
 const HERO_VIDEO_DURATION_MS = 6000;
 const HERO_VIDEO_FADE_MS = 80;
+const HERO_STARTUP_TIMEOUT_MS = 8000;
 const HERO_POSTER =
   "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1920&q=80";
 
@@ -207,6 +208,8 @@ export default function Home() {
   const [heroVideos, setHeroVideos] = useState([HERO_VIDEO_FALLBACK]);
   const [heroVideoIndex, setHeroVideoIndex] = useState(0);
   const [visibleSlot, setVisibleSlot] = useState(0);
+  const [heroReady, setHeroReady] = useState(false);
+  const [pageReady, setPageReady] = useState(false);
   const frontRef = useRef(null);
   const backRef = useRef(null);
   const currentPlayingIndexRef = useRef(0);
@@ -246,6 +249,20 @@ export default function Home() {
     return () => {
       cancelled = true;
     };
+  }, []);
+
+  useEffect(() => {
+    if (document.readyState === "complete") {
+      window.requestAnimationFrame(() => setPageReady(true));
+      return undefined;
+    }
+
+    const handleLoad = () => {
+      window.requestAnimationFrame(() => setPageReady(true));
+    };
+
+    window.addEventListener("load", handleLoad);
+    return () => window.removeEventListener("load", handleLoad);
   }, []);
 
   function waitForCanPlay(videoElement, timeout = 2500) {
@@ -294,6 +311,7 @@ export default function Home() {
     currentPlayingIndexRef.current = 0;
     setHeroVideoIndex(0);
     setVisibleSlot(0);
+    setHeroReady(false);
 
     if (frontVideo) {
       frontVideo.src = firstVideo;
@@ -303,8 +321,11 @@ export default function Home() {
         // Ignore load failures and fall back to the browser's default handling.
       }
 
-      void waitForCanPlay(frontVideo).then(() => {
-        frontVideo.play().catch(() => {});
+      void waitForCanPlay(frontVideo, HERO_STARTUP_TIMEOUT_MS).then((ready) => {
+        if (ready) {
+          frontVideo.play().catch(() => {});
+        }
+        setHeroReady(true);
       });
     }
 
@@ -377,6 +398,15 @@ export default function Home() {
 
   return (
     <div data-testid="page-home">
+      {!(heroReady && pageReady) && (
+        <div
+          className="fixed inset-0 z-[9999] bg-white flex items-center justify-center"
+          data-testid="hero-loading-screen"
+          aria-hidden="true"
+        >
+          <div className="h-12 w-12 rounded-full border-4 border-stone-200 border-t-orange-600 animate-spin" />
+        </div>
+      )}
       {/* HERO — UNCHANGED, with math symbols added next to marquee labels and responsive tweaks */}
       <section className="relative min-h-[88vh] flex items-center overflow-hidden" data-testid="hero-section">
         <video
@@ -396,6 +426,7 @@ export default function Home() {
               setHeroVideos((currentVideos) => shuffleVideos(currentVideos));
               setHeroVideoIndex(0);
             }
+            setHeroReady(true);
           }}
           data-testid="hero-video-front"
         />
