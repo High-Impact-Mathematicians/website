@@ -21,6 +21,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [learnOpen, setLearnOpen] = useState(false);
   const location = useLocation();
+  const homeUrl = `${process.env.PUBLIC_URL || ""}/`;
 
   const handleTopOfPageClick = (targetPath) => (event) => {
     if (location.pathname === targetPath) {
@@ -44,6 +45,10 @@ export default function Header() {
           to="/"
           className="flex items-center gap-2.5 md:gap-3 group min-w-0"
           data-testid="logo-link"
+          onClick={(event) => {
+            event.preventDefault();
+            window.location.assign(homeUrl);
+          }}
         >
           <Logo size={30} />
           <div className="leading-[1.15] pb-[2px]">
