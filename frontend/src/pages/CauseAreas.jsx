@@ -15,7 +15,7 @@ export default function CauseAreas() {
       <section>
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-10">
           <h1 className="font-serif-display text-5xl md:text-7xl tracking-tight leading-[0.98] max-w-5xl text-stone-900 dark:text-stone-100">
-            Problem profiles
+            Cause areas
           </h1>
           <p className="mt-6 max-w-3xl font-serif-display italic text-stone-600 dark:text-stone-400 text-xl md:text-2xl leading-snug">
             Problems where mathematicians can maximise their impact.

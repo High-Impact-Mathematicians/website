@@ -558,7 +558,7 @@ export default function Home() {
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-24 md:py-32">
           <div className="max-w-3xl">
             <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 mb-3">
-              Problem areas
+              Cause areas
             </div>
             <h2 className="font-serif-display text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.04] text-stone-900 dark:text-stone-100">
               Where math goes to work

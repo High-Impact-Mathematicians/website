@@ -9,7 +9,7 @@ const navItems = [
   {
     label: "Learn",
     dropdown: [
-      { to: "/learn/cause-areas", label: "Problem profiles" },
+      { to: "/learn/cause-areas", label: "Cause areas" },
       { to: "/learn/resources", label: "Resources" },
     ],
   },
