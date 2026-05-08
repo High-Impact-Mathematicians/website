@@ -535,18 +535,40 @@ export default function Home() {
       {/* INSPIRED BY */}
       <section className="bg-white dark:bg-stone-950 border-t border-stone-200 dark:border-stone-800">
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-12">
-          <div className="text-center font-mono-tag text-[11px] uppercase tracking-[0.22em] text-stone-500 dark:text-stone-500 mb-7">
+          <div className="text-center font-mono-tag text-[11px] uppercase tracking-[0.22em] text-stone-500 dark:text-stone-500 mb-8">
             Inspired by
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 md:gap-x-12 gap-y-5 text-stone-600 dark:text-stone-400">
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
             {[
-              { l: "Effective Altruism", h: "https://www.effectivealtruism.org/" },
-              { l: "Leaf", h: "https://leaf.courses/" },
-              { l: "High Impact Professionals", h: "https://www.highimpactprofessionals.org/" },
-              { l: "80,000 Hours", h: "https://80000hours.org/" },
+              {
+                label: "Effective Altruism",
+                href: "https://www.effectivealtruism.org/",
+                logo: `${process.env.PUBLIC_URL}/partner-logos/effective-altrusim.jpg`,
+              },
+              {
+                label: "Leaf",
+                href: "https://leaf.courses/",
+                logo: `${process.env.PUBLIC_URL}/partner-logos/leaf.webp`,
+              },
+              {
+                label: "High Impact Professionals",
+                href: "https://www.highimpactprofessionals.org/",
+                logo: `${process.env.PUBLIC_URL}/partner-logos/high-impact-professionals.jpg`,
+              },
             ].map((p) => (
-              <a key={p.l} href={p.h} target="_blank" rel="noreferrer" className="font-serif-display text-lg md:text-2xl text-stone-700 dark:text-stone-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
-                {p.l}
+              <a
+                key={p.label}
+                href={p.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-center w-[220px] md:w-[260px] h-[96px] md:h-[110px] bg-transparent hover:opacity-85 transition-opacity duration-200"
+              >
+                <img
+                  src={p.logo}
+                  alt={p.label}
+                  className="max-h-14 md:max-h-16 w-auto object-contain"
+                  loading="lazy"
+                />
               </a>
             ))}
           </div>
@@ -609,7 +631,18 @@ export default function Home() {
               <p className="mt-5 text-stone-700 dark:text-stone-300 text-lg leading-relaxed font-serif-display italic">
                 {openCause.short}
               </p>
-              <p className="mt-5 text-stone-700 dark:text-stone-300 leading-relaxed">{openCause.why}</p>
+              {openCause.itn && (
+                <div className="mt-6 space-y-4">
+                  {openCause.itn.map(({ label, body }) => (
+                    <div key={label}>
+                      <span className="font-mono-tag text-[11px] uppercase tracking-[0.18em] text-orange-600 dark:text-orange-400">
+                        {label}
+                      </span>
+                      <p className="mt-1 text-stone-700 dark:text-stone-300 leading-relaxed text-[15px]">{body}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="mt-8">
                 <div className="font-mono-tag text-[10px] uppercase tracking-[0.22em] text-stone-500 dark:text-stone-500 mb-3">
                   Open work mathematicians can take on
@@ -623,6 +656,30 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
+              {openCause.links && openCause.links.length > 0 && (
+                <div className="mt-8">
+                  <div className="font-mono-tag text-[10px] uppercase tracking-[0.22em] text-stone-500 dark:text-stone-500 mb-3">
+                    Further reading
+                  </div>
+                  <ul className="space-y-2">
+                    {openCause.links.map(({ text, note, url }) => (
+                      <li key={text} className="flex items-start gap-3 text-stone-800 dark:text-stone-200 text-sm">
+                        <span className="font-mono-tag text-stone-400 dark:text-stone-600 mt-0.5">↗</span>
+                        <span>
+                          {url ? (
+                            <a href={url} target="_blank" rel="noreferrer" className="em-link text-stone-900 dark:text-stone-100 font-medium">
+                              {text}
+                            </a>
+                          ) : (
+                            <span className="text-stone-900 dark:text-stone-100 font-medium">{text}</span>
+                          )}
+                          {note && <span className="text-stone-500 dark:text-stone-500"> — {note}</span>}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link to="/learn/cause-areas" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-5 py-3 text-sm font-medium rounded-full transition-colors">
                   See all problem profiles <ArrowRight size={15} />
