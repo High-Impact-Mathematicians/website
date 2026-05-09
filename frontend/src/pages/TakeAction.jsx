@@ -6,14 +6,14 @@ import { ArrowUpRight, ArrowRight, Users, PenLine, Lightbulb, ChevronDown } from
 const FORUM_URL = "https://github.com/orgs/High-Impact-Mathematicians/discussions";
 
 const COMMUNITY_PHOTOS = [
-  { src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=85", alt: "Community member" },
-  { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=85", alt: "Community member" },
-  { src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=85", alt: "Community member" },
-  { src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=85", alt: "Community member" },
-  { src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=85", alt: "Community member" },
-  { src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=85", alt: "Community member" },
-  { src: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600&q=85", alt: "Community member" },
-  { src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=85", alt: "Community member" },
+  { src: "https://placehold.co/600x800/e7e5e4/a8a29e?text=Photo", alt: "Community member" },
+  { src: "https://placehold.co/600x450/d6d3d1/a8a29e?text=Photo", alt: "Community member" },
+  { src: "https://placehold.co/600x800/e7e5e4/a8a29e?text=Photo", alt: "Community member" },
+  { src: "https://placehold.co/600x450/d6d3d1/a8a29e?text=Photo", alt: "Community member" },
+  { src: "https://placehold.co/600x450/e7e5e4/a8a29e?text=Photo", alt: "Community member" },
+  { src: "https://placehold.co/600x800/d6d3d1/a8a29e?text=Photo", alt: "Community member" },
+  { src: "https://placehold.co/600x450/e7e5e4/a8a29e?text=Photo", alt: "Community member" },
+  { src: "https://placehold.co/600x800/d6d3d1/a8a29e?text=Photo", alt: "Community member" },
 ];
 
 const LEFT_ASPECTS  = ["aspect-[3/4]", "aspect-[4/3]", "aspect-[3/4]", "aspect-[4/3]"];
@@ -101,17 +101,19 @@ function PhotoCollage({ col1Ref, col2Ref, containerRef }) {
 }
 
 export default function TakeAction() {
-  const pinRef       = useRef(null); // tall scroll-capture wrapper
+  const pinRef       = useRef(null);
   const col1Ref      = useRef(null);
   const col2Ref      = useRef(null);
-  const containerRef = useRef(null); // the overflow:hidden photo window
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    // Measure column heights once after layout settles, and again on resize.
     let col1Overflow = 0;
     let col2Overflow = 0;
 
+    const isDesktop = () => window.innerWidth >= 1024;
+
     const measure = () => {
+      if (!isDesktop()) return;
       const col1 = col1Ref.current;
       const col2 = col2Ref.current;
       const box  = containerRef.current;
@@ -122,21 +124,19 @@ export default function TakeAction() {
     };
 
     const onScroll = () => {
+      if (!isDesktop()) return;
       const el = pinRef.current;
       if (!el) return;
       const scrollable = el.offsetHeight - window.innerHeight;
       if (scrollable <= 0) return;
       const progress = Math.max(0, Math.min(1, -el.getBoundingClientRect().top / scrollable));
-
       if (col1Ref.current) col1Ref.current.style.transform = `translateY(${-progress * col1Overflow}px)`;
       if (col2Ref.current) col2Ref.current.style.transform = `translateY(${-progress * col2Overflow * 0.78}px)`;
     };
 
     const onResize = () => { measure(); onScroll(); };
 
-    // Delay measure so the browser finishes layout before we read heights.
     const t = setTimeout(() => { measure(); onScroll(); }, 80);
-
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
 
@@ -151,49 +151,48 @@ export default function TakeAction() {
     <div data-testid="page-take-action" className="bg-white dark:bg-stone-950">
 
       {/* ── PINNED HERO ──────────────────────────────────────────────────────────
-          This div is 260vh tall. The sticky child fills one viewport and stays
-          locked while the user scrolls through the extra 160vh, which drives
-          the photo column animation. Once the buffer is consumed the page
-          naturally flows into the roadmap section below.
+          On desktop (lg+): 260vh tall — sticky child locks to viewport while
+          the extra 160vh drives the photo scroll animation.
+          On mobile: h-screen — no scroll trap, page flows naturally.
       ──────────────────────────────────────────────────────────────────────── */}
-      <div ref={pinRef} style={{ height: "260vh" }} className="relative">
+      <div ref={pinRef} className="relative h-screen lg:h-[260vh]">
         <div className="sticky top-0 h-screen flex flex-col bg-white dark:bg-stone-950 overflow-hidden">
 
-          {/* Main content area */}
-          <div className="flex-1 flex items-center">
-            <div className="max-w-[1240px] mx-auto px-6 md:px-10 w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
+          {/* Content */}
+          <div className="flex-1 flex items-center min-h-0">
+            <div className="max-w-[1240px] mx-auto px-6 md:px-10 w-full py-8 lg:py-0">
+              <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 lg:gap-16 items-center">
 
                 {/* Left: copy */}
                 <div>
-                  <div className="font-mono-tag text-[10px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-4">
+                  <div className="font-mono-tag text-[10px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-3 md:mb-4">
                     Join the community
                   </div>
-                  <h1 className="font-serif-display text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-stone-900 dark:text-stone-100">
+                  <h1 className="font-serif-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-stone-900 dark:text-stone-100">
                     Become a High-Impact Mathematician
                   </h1>
-                  <p className="mt-6 text-stone-600 dark:text-stone-400 text-lg md:text-xl leading-relaxed max-w-lg">
+                  <p className="mt-4 md:mt-6 text-stone-600 dark:text-stone-400 text-base md:text-xl leading-relaxed max-w-lg">
                     Join a growing community of mathematicians directing their skills toward the world's most pressing problems. Connect, collaborate, and contribute to cause areas where your work can matter most.
                   </p>
-                  <div className="mt-8 flex flex-wrap gap-4">
+                  <div className="mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
                     <a
                       href={FORUM_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-md font-medium transition-colors"
+                      className="inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-md font-medium transition-colors"
                     >
                       Join the forum <ArrowUpRight size={16} />
                     </a>
                     <Link
                       to="/learn/cause-areas"
-                      className="inline-flex items-center gap-2 border border-stone-300 dark:border-stone-600 text-stone-700 dark:text-stone-300 hover:border-orange-500 hover:text-orange-700 dark:hover:text-orange-400 px-6 py-3 rounded-md font-medium transition-colors"
+                      className="inline-flex items-center justify-center gap-2 border border-stone-300 dark:border-stone-600 text-stone-700 dark:text-stone-300 hover:border-orange-500 hover:text-orange-700 dark:hover:text-orange-400 px-6 py-3 rounded-md font-medium transition-colors"
                     >
                       Explore cause areas <ArrowRight size={16} />
                     </Link>
                   </div>
                 </div>
 
-                {/* Right: scroll-driven photo collage */}
+                {/* Right: scroll-driven photo collage — desktop only */}
                 <div className="hidden lg:block w-full">
                   <PhotoCollage col1Ref={col1Ref} col2Ref={col2Ref} containerRef={containerRef} />
                 </div>
@@ -202,8 +201,8 @@ export default function TakeAction() {
             </div>
           </div>
 
-          {/* Scroll hint */}
-          <div className="pb-6 flex justify-center">
+          {/* Scroll hint — desktop only (mobile has no scroll trap) */}
+          <div className="hidden lg:flex pb-6 justify-center">
             <div className="flex flex-col items-center gap-1.5 text-stone-400 dark:text-stone-600">
               <span className="font-mono-tag text-[9px] uppercase tracking-[0.2em]">Scroll to explore</span>
               <ChevronDown size={14} className="animate-bounce" />
@@ -215,17 +214,17 @@ export default function TakeAction() {
 
       {/* ── YOUR ROADMAP ─────────────────────────────────────────────────────── */}
       <section data-testid="roadmap" className="bg-cream dark:bg-stone-900">
-        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-16 md:py-28">
           <EASectionHeader
             kicker="Your Journey"
             title="Your roadmap"
             subtitle="Three steps to get started and make your mark."
           />
 
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {STEPS.map(({ number, Icon, title, body, cta }) => (
-              <div key={number} className="bg-white dark:bg-stone-950 rounded-md p-8 flex flex-col">
-                <div className="flex items-center justify-between mb-6">
+              <div key={number} className="bg-white dark:bg-stone-950 rounded-md p-6 md:p-8 flex flex-col">
+                <div className="flex items-center justify-between mb-5 md:mb-6">
                   <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400">
                     Step {number}
                   </div>
@@ -233,13 +232,13 @@ export default function TakeAction() {
                     <Icon size={17} className="text-orange-600 dark:text-orange-400" />
                   </div>
                 </div>
-                <h3 className="font-serif-display text-[22px] leading-tight text-stone-900 dark:text-stone-100">
+                <h3 className="font-serif-display text-xl md:text-[22px] leading-tight text-stone-900 dark:text-stone-100">
                   {title}
                 </h3>
-                <p className="mt-3 text-[15px] text-stone-600 dark:text-stone-400 leading-relaxed flex-1">
+                <p className="mt-3 text-[14px] md:text-[15px] text-stone-600 dark:text-stone-400 leading-relaxed flex-1">
                   {body}
                 </p>
-                <div className="mt-6 pt-4 border-t border-stone-200 dark:border-stone-800">
+                <div className="mt-5 md:mt-6 pt-4 border-t border-stone-200 dark:border-stone-800">
                   {cta.external ? (
                     <a href={cta.href} target="_blank" rel="noreferrer"
                        className="inline-flex items-center gap-1 text-orange-700 dark:text-orange-400 text-sm font-medium em-link">
@@ -260,14 +259,14 @@ export default function TakeAction() {
 
       {/* ── GO FURTHER ───────────────────────────────────────────────────────── */}
       <section data-testid="ways-to-engage" className="bg-white dark:bg-stone-950">
-        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-16 md:py-28">
           <EASectionHeader
             kicker="Go Deeper"
             title="Go further"
             subtitle="More ways to contribute, in roughly increasing order of commitment."
           />
 
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-x-7 gap-y-12">
+          <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-3 gap-x-7 gap-y-10 md:gap-y-12">
             {MORE_WAYS.map((w, i) => (
               <div key={w.title} data-testid={`way-${i}`}>
                 <Link to={w.cta.to} className="ea-card group block">
@@ -275,10 +274,10 @@ export default function TakeAction() {
                     <img src={w.image} alt={w.title} loading="lazy" className="w-full h-full object-cover" />
                   </div>
                   <div className="mt-4">
-                    <div className="font-serif-display text-[20px] leading-tight text-stone-900 dark:text-stone-100 group-hover:text-orange-700 dark:group-hover:text-orange-400 transition-colors">
+                    <div className="font-serif-display text-[18px] md:text-[20px] leading-tight text-stone-900 dark:text-stone-100 group-hover:text-orange-700 dark:group-hover:text-orange-400 transition-colors">
                       {w.title}
                     </div>
-                    <p className="mt-2 text-[14px] text-stone-700 dark:text-stone-300 leading-relaxed">{w.body}</p>
+                    <p className="mt-2 text-[13px] md:text-[14px] text-stone-700 dark:text-stone-300 leading-relaxed">{w.body}</p>
                     <div className="mt-3 inline-flex items-center gap-1 text-orange-700 dark:text-orange-400 text-sm em-link">
                       {w.cta.label} <ArrowRight size={13} />
                     </div>
