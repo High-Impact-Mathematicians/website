@@ -238,34 +238,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* WHO WE ARE */}
-      <section className="bg-cream">
-        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
-          <h6 className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 mb-3">
-            Who we are
-          </h6>
-          <div className="ea-rule mb-12" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
-            <div>
-              <p className="font-serif-display text-3xl md:text-[36px] text-stone-900 leading-[1.2]">
-                Two mathematicians building the community they needed and couldn't find.
-              </p>
-            </div>
-            <div className="space-y-5 text-stone-700 text-[17px] leading-[1.75]">
-              <p>
-                We are two mathematicians in our mid-20s with degrees in mathematics, both active members of the effective altruism community. We are building this mathematician-to-mathematician — not as career counselors or institutional researchers, but as the exact audience this community is designed for.
-              </p>
-              <p>
-                We identified the gap from the inside, validated it through conversations with mathematicians and EA community builders including the founder of High Impact Medicine, and are building the infrastructure that we ourselves needed and could not find.
-              </p>
-              <p>
-                Our own work proves the concept: mathematical modeling of light pollution, indoor pathogen spread modeling relevant to biosecurity, and climate change modeling. These projects exist not because of any formal infrastructure, but despite the lack of it.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* STRATEGY */}
       <section className="bg-white">
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
