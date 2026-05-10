@@ -1,29 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import EASectionHeader from "../components/EASectionHeader";
-import EACard from "../components/EACard";
 import { ArrowRight } from "lucide-react";
 
 const PRINCIPLES = [
   {
     title: "Inclusive & Quantitatively Driven",
-    body: "We welcome mathematicians and quantitative thinkers of all backgrounds, career stages, and levels of experience. The only prerequisite is a desire to use your skills for good.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+    body: "We welcome mathematicians and quantitative thinkers across backgrounds, career stages, and levels of experience. You do not need to arrive as an expert in effective altruism to contribute meaningfully. What matters is a genuine commitment to using your skills thoughtfully in service of high-impact work.",
   },
   {
     title: "Collaborative",
-    body: "We believe the most important problems in the world will not be solved alone. We grow faster, think better, and achieve more when we build together.",
-    image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80",
+    body: "We believe the world's most important problems are too complex to solve in isolation. Strong progress comes from open collaboration, peer feedback, and shared ownership of ideas. We build structures that help people think together, improve each other's work, and move from discussion to action.",
   },
   {
     title: "Open Truth-Seeking",
-    body: "We hold our beliefs lightly. Remaining open to new evidence — including evidence that challenges our own assumptions — is how good thinking works.",
-    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80",
+    body: "We treat belief as provisional and update when better evidence appears. Being willing to revise assumptions is not a weakness; it is a core part of rigorous reasoning. Our culture rewards curiosity, intellectual honesty, and clarity over defensiveness.",
   },
   {
     title: "Honest & Epistemically Humble",
-    body: "We reason transparently, acknowledge our assumptions, and communicate with clarity and integrity. We would rather update our views than defend a bad argument.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    body: "We reason transparently and make our assumptions explicit whenever possible. Epistemic humility means recognizing uncertainty, sharing limits honestly, and welcoming critique. We would rather improve a model together than preserve confidence in a weak argument.",
+  },
+  {
+    title: "Impartially Altruistic",
+    body: "We take an expansive view of moral concern that extends across borders, identities, and species. Geographic proximity or familiarity alone should not determine whose wellbeing matters. We aim to direct effort where suffering is greatest and where carefully applied quantitative work can help most.",
   },
 ];
 
@@ -77,13 +76,6 @@ const STRATEGY_PHASES = [
   },
 ];
 
-const SUCCESS_METRICS = [
-  { metric: "Community size", target: "200+ active members by year 2" },
-  { metric: "Projects delivered", target: "25 completed projects with measurable outputs" },
-  { metric: "Institutional partnerships", target: "3+ EA organizations using our talent pipeline" },
-  { metric: "External reach", target: "Featured as resource by 80,000 Hours, major EA groups" },
-];
-
 export default function AboutMission() {
   return (
     <div data-testid="page-about-mission" className="bg-white dark:bg-stone-950">
@@ -114,15 +106,7 @@ export default function AboutMission() {
           </h2>
           <div className="ea-rule mb-12" />
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
-            <div className="md:col-span-4">
-              <div className="font-serif-display text-[90px] md:text-[112px] text-stone-900 dark:text-stone-100 leading-none tracking-tight">
-                ~500
-              </div>
-              <p className="mt-4 font-mono-tag text-[11px] uppercase tracking-[0.14em] text-stone-500 dark:text-stone-400 leading-relaxed">
-                Quantitative thinkers currently directing their skills to high-priority causes
-              </p>
-            </div>
-            <div className="md:col-span-8 space-y-5 text-stone-700 dark:text-stone-300 text-[17px] leading-[1.75]">
+            <div className="md:col-span-12 space-y-5 text-stone-700 dark:text-stone-300 text-[17px] leading-[1.75] max-w-5xl">
               <p>
                 Every year, thousands of mathematicians and quantitatively trained graduates enter academia, finance, and industry. The overwhelming majority spend their careers on problems that are intellectually rich; however, they are largely disconnected from the world's most urgent challenges.
               </p>
@@ -223,22 +207,45 @@ export default function AboutMission() {
             </p>
           </div>
 
-          <div>
-            <h3 className="font-serif-display text-2xl text-stone-900 dark:text-stone-100 mb-8">
+        </div>
+      </section>
+
+      {/* SUCCESS METRICS */}
+      <section className="bg-stone-50 dark:bg-stone-900/50 border-y border-stone-200 dark:border-stone-800">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-24">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif-display text-3xl md:text-5xl text-stone-900 dark:text-stone-100 mb-4">
               Success metrics
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {SUCCESS_METRICS.map((item, idx) => (
-                <div key={idx} className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-6 rounded-md">
-                  <div className="font-mono-tag text-[10px] uppercase tracking-[0.18em] text-orange-600 dark:text-orange-400 mb-3">
-                    {item.metric}
-                  </div>
-                  <p className="text-stone-900 dark:text-stone-100 font-medium">
-                    {item.target}
-                  </p>
-                </div>
-              ))}
-            </div>
+            </h2>
+            <p className="text-stone-600 dark:text-stone-400 text-[16px] leading-relaxed">
+              We track two core indicators to evaluate whether we are actually redirecting mathematical talent toward high-impact causes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <article className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-md p-7 md:p-8">
+              <div className="font-mono-tag text-[11px] uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4">
+                Metric 1
+              </div>
+              <h3 className="font-serif-display text-2xl text-stone-900 dark:text-stone-100 mb-3">
+                Participant perspective shift
+              </h3>
+              <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed">
+                The number of participants who changed their stance on how mathematics can be used for impactful causes, and which causes matter most. We measure this through a form completed after participants finish the introductory fellowship.
+              </p>
+            </article>
+
+            <article className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-md p-7 md:p-8">
+              <div className="font-mono-tag text-[11px] uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4">
+                Metric 2
+              </div>
+              <h3 className="font-serif-display text-2xl text-stone-900 dark:text-stone-100 mb-3">
+                Projects developed
+              </h3>
+              <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed">
+                The number of projects developed that aim to do good using mathematics and direct work toward high-impact cause areas.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -280,37 +287,16 @@ export default function AboutMission() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-serif-display text-lg text-stone-900 dark:text-stone-100 mb-4">
-                Inputs
-              </h3>
-              <ul className="space-y-2 text-stone-600 dark:text-stone-400 text-[15px]">
-                <li>• Partnerships with effective organisations and mathematics communities</li>
-                <li>• Aligned initiatives and funding to sustain and grow</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-serif-display text-lg text-stone-900 dark:text-stone-100 mb-4">
-                Activities
-              </h3>
-              <ul className="space-y-2 text-stone-600 dark:text-stone-400 text-[15px]">
-                <li>• Outreach & community building</li>
-                <li>• Introductory Fellowship</li>
-                <li>• Resource Hub</li>
-                <li>• GitHub Forum</li>
-                <li>• Peer networking</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-serif-display text-lg text-stone-900 dark:text-stone-100 mb-4">
-                Outcomes
-              </h3>
-              <ul className="space-y-2 text-stone-600 dark:text-stone-400 text-[15px]">
-                <li>• Mathematicians redirect careers toward high-impact causes</li>
-                <li>• Enriched and more diverse EA ecosystem</li>
-                <li>• New projects applying math to world's greatest challenges</li>
-              </ul>
+          <div className="mt-4">
+            <div className="w-full min-h-[360px] md:min-h-[460px] rounded-md border-2 border-dashed border-stone-300 dark:border-stone-700 bg-white/70 dark:bg-stone-900/60 flex items-center justify-center">
+              <div className="text-center px-6">
+                <div className="font-mono-tag text-[11px] uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-3">
+                  Infographic placeholder
+                </div>
+                <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed max-w-md">
+                  Add your Theory of Change infographic image here.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -336,20 +322,22 @@ export default function AboutMission() {
             <h3 className="font-serif-display text-2xl text-stone-900 dark:text-stone-100 mb-8">
               Our values
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="space-y-4">
               {PRINCIPLES.map((p) => (
-                <EACard key={p.title} image={p.image} title={p.title} source={p.body} />
+                <article
+                  key={p.title}
+                  className="bg-stone-50 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 rounded-md p-5 md:p-6"
+                >
+                  <div>
+                    <h4 className="font-serif-display text-[22px] leading-tight text-stone-900 dark:text-stone-100 mb-2">
+                      {p.title}
+                    </h4>
+                    <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed">
+                      {p.body}
+                    </p>
+                  </div>
+                </article>
               ))}
-            </div>
-          </div>
-          <div className="mt-16">
-            <div className="bg-cream dark:bg-stone-900/40 rounded-md p-8 md:p-10 border border-stone-200 dark:border-stone-800">
-              <h4 className="font-serif-display text-lg text-stone-900 dark:text-stone-100 mb-4">
-                Impartially Altruistic
-              </h4>
-              <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed">
-                We are committed to a radical and expansive form of empathy. Our moral circle does not stop at national borders, or at the boundary of the human species. We take seriously the wellbeing of all those affected by the world's problems — regardless of geography, species, or proximity to ourselves.
-              </p>
             </div>
           </div>
         </div>
