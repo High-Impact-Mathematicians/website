@@ -526,9 +526,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHAT IS A HIGH IMPACT MATHEMATICIAN — with low-opacity sigma watermark */}
+      {/* WHAT ARE HIGH IMPACT MATHEMATICIANS */}
       <section className="relative bg-white dark:bg-stone-950 overflow-hidden" data-testid="definition-section">
-        {/* Sigma watermark, low opacity */}
         <div
           aria-hidden
           className="em-sigma-watermark absolute text-[400px] md:text-[640px] -right-8 md:-right-20 top-1/2 -translate-y-1/2 select-none pointer-events-none"
@@ -538,22 +537,53 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-[1240px] mx-auto px-6 md:px-10 py-24 md:py-32">
-          <EASectionHeader title="What is a high impact mathematician?" />
+          <EASectionHeader title="What are High Impact Mathematicians?" />
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
-            <div>
-              <h3 className="font-serif-display text-2xl md:text-[28px] text-stone-900 dark:text-stone-100 leading-tight">A discipline</h3>
-              <p className="mt-5 text-stone-700 dark:text-stone-300 text-lg leading-[1.7]">
-                Someone who treats the question <em>"what should I work on?"</em> with the same rigor they bring to a proof: using mathematics, and the careful habits of mind that come with it to identify the problems where their effort buys the most expected impact in the world.{" "}
-                <Link to="/about/mission" className="em-link text-orange-700 dark:text-orange-400">Read more</Link>.
-              </p>
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+            {/* Left: who we are */}
+            <div className="flex flex-col justify-between h-full">
+              <div className="space-y-5">
+                <p className="text-stone-700 dark:text-stone-300 text-[16px] leading-[1.75]">
+                  High Impact Mathematicians is a global, open community built for mathematicians and quantitative thinkers who want to direct their skills toward the world's most pressing problems. We believe mathematical talent is one of the most powerful and under-directed forces for good — and that the gap between where it goes and where it is needed most is a problem worth solving.
+                </p>
+                <p className="text-stone-700 dark:text-stone-300 text-[16px] leading-[1.75]">
+                  Our community connects people across career stages and backgrounds — from undergraduates encountering effective altruism for the first time to established researchers looking for their next meaningful challenge. We surface high-impact opportunities, build shared infrastructure, and help members find the path from mathematical skill to real-world contribution.
+                </p>
+                <p className="text-stone-700 dark:text-stone-300 text-[16px] leading-[1.75]">
+                  We draw on ideas from the effective altruism community — in particular the ITN framework, which evaluates cause areas by their Importance, Tractability, and Neglectedness. It is not a dogma but a compass: a way of asking where mathematical effort is most needed, and where it can go furthest. Our goal is to make that question feel answerable, and to build the community that helps people act on the answer.
+                </p>
+              </div>
+              <Link
+                to="/about/mission"
+                className="inline-flex items-center gap-2 mt-8 text-[14px] font-medium text-orange-700 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors"
+              >
+                Read our full mission <ArrowRight size={14} />
+              </Link>
             </div>
-            <div>
-              <h3 className="font-serif-display text-2xl md:text-[28px] text-stone-900 dark:text-stone-100 leading-tight">A community</h3>
-              <p className="mt-5 text-stone-700 dark:text-stone-300 text-lg leading-[1.7]">
-                An online network of mathematicians, statisticians and quantitative thinkers, helping each other point our work at the cause areas that matter most.
-              </p>
+
+            {/* Right: three pillars */}
+            <div className="space-y-0">
+              <div className="border-t border-stone-200 dark:border-stone-800 py-6">
+                <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-2">Our goal</div>
+                <p className="text-stone-700 dark:text-stone-300 text-[16px] leading-[1.7]">
+                  To become the first unified global platform where mathematicians learn about high-impact cause areas, collaborate on meaningful projects, and redirect their expertise toward biosecurity, AI safety, climate change, global health, and animal welfare.
+                </p>
+              </div>
+              <div className="border-t border-stone-200 dark:border-stone-800 py-6">
+                <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-2">How we operate</div>
+                <p className="text-stone-700 dark:text-stone-300 text-[16px] leading-[1.7]">
+                  Entirely open source and hosted on GitHub. We offer an introductory course, a curated resource hub, and a collaborative community forum — three programmes designed to take someone from curiosity to contribution.
+                </p>
+              </div>
+              <div className="border-t border-b border-stone-200 dark:border-stone-800 py-6">
+                <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-2">Who we welcome</div>
+                <p className="text-stone-700 dark:text-stone-300 text-[16px] leading-[1.7]">
+                  Any mathematician or quantitatively-minded person, at any career stage. You don't need to arrive as an expert in effective altruism — just bring a genuine interest in using your skills for something that matters.
+                </p>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
