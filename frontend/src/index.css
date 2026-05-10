@@ -103,7 +103,11 @@ html.dark ::-webkit-scrollbar-thumb { background: #2A2724; }
     padding-bottom: 2px;
     transition: opacity 0.2s ease;
 }
-.em-link:hover { opacity: 0.7; }
+.em-link:hover,
+.em-link:focus-visible {
+    color: var(--em-primary);
+    opacity: 1;
+}
 
 .ea-card-img {
     overflow: hidden;

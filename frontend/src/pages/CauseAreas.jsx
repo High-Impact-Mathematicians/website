@@ -156,7 +156,7 @@ export default function CauseAreas() {
                     Further reading
                   </div>
                   <ul className="space-y-2">
-                    {open.links.map(({ text, note, url }) => (
+                    {open.links.map(({ text, url }) => (
                       <li key={text} className="flex items-start gap-3 text-stone-800 dark:text-stone-200 text-sm">
                         <span className="font-mono-tag text-stone-400 dark:text-stone-600 mt-0.5">↗</span>
                         <span>
@@ -167,7 +167,6 @@ export default function CauseAreas() {
                           ) : (
                             <span className="text-stone-900 dark:text-stone-100 font-medium">{text}</span>
                           )}
-                          {note && <span className="text-stone-500 dark:text-stone-500"> — {note}</span>}
                         </span>
                       </li>
                     ))}
