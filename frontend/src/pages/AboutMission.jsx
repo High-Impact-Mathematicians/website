@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PRINCIPLES = [
   {
@@ -28,16 +29,20 @@ const PROGRAMS = [
     num: "01",
     title: "Resource Hub",
     body: "A curated library of articles, books, research, and guides designed to help members understand high-impact cause areas and explore how their mathematical skills can be applied to them. Whether you're new to effective altruism or already familiar with the landscape, the Resource Hub gives you a clear starting point and a deeper foundation to build from.",
+    href: "/learn/resources",
   },
   {
     num: "02",
     title: "Community Forum",
     body: "Hosted on GitHub, our open forum is where the community comes alive. Members can share ideas, comment on proposals, collaborate on projects, and build on each other's work. It's a space designed for collective thinking — not passive consumption. It encourages communities to join in with members to make comments, suggest ideas, and help each other out in a collaborative environment.",
+    href: "https://github.com/orgs/High-Impact-Mathematicians/discussions",
+    external: true,
   },
   {
     num: "03",
     title: "Introductory Course",
     body: "A structured course delivered through this website, designed for those just getting started. The course introduces the core ideas in our space, outlines the most important cause areas, and helps newcomers find their footing and their path to impact.",
+    status: "In progress",
   },
 ];
 
@@ -128,7 +133,7 @@ export default function AboutMission() {
         </div>
         <div className="relative max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20">
-            <div className="flex flex-col gap-8">
+            <div>
               <div>
                 <h6 className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-400 mb-6">
                   Vision
@@ -137,7 +142,6 @@ export default function AboutMission() {
                   We envision a world where mathematicians and quantitative thinkers direct their skills toward humanity's most pressing problems.
                 </p>
               </div>
-              <ImagePlaceholder label="Vision image" aspect="aspect-[16/9]" />
             </div>
             <div className="lg:border-l lg:border-stone-700 lg:pl-16">
               <h6 className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-400 mb-6">
@@ -159,38 +163,72 @@ export default function AboutMission() {
       </section>
 
       {/* STRATEGY */}
-      <section className="bg-cream dark:bg-stone-900/40">
+      <section className="bg-white dark:bg-stone-950">
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
           <div className="mb-16">
             <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-4">
-              Our programmes
+              Our strategy
             </div>
             <h2 className="font-serif-display text-3xl md:text-5xl text-stone-900 dark:text-stone-100 mb-4">
               How will we achieve our mission?
             </h2>
             <div className="ea-rule mb-6" />
-            <p className="text-stone-600 dark:text-stone-400 max-w-3xl leading-relaxed text-[16px]">
+            <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-[16px]">
               We work with mathematicians and quantitative thinkers of all ages and backgrounds — from undergraduate students to seasoned researchers — helping them direct their skills toward the world's most pressing problems. Our work is organized around three core programmes:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
-            {PROGRAMS.map((prog) => (
-              <article
-                key={prog.num}
-                className="group bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 rounded-lg p-7 md:p-8 flex flex-col hover:border-orange-400/50 dark:hover:border-orange-500/40 transition-colors"
-              >
-                <div className="font-mono-tag text-[11px] uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4">
-                  {prog.num}
+            {PROGRAMS.map((prog) => {
+              const card = (
+                <article
+                  className="bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 rounded-lg p-7 md:p-8 flex flex-col transition-colors h-full group-hover:border-orange-400/50 dark:group-hover:border-orange-500/40"
+                >
+                  <div className="font-mono-tag text-[11px] uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4">
+                    {prog.num}
+                  </div>
+                  <h3 className="font-serif-display text-2xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
+                    {prog.title}
+                  </h3>
+                  <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed flex-1">
+                    {prog.body}
+                  </p>
+                  {prog.status && (
+                    <span className="mt-4 inline-flex items-center font-mono-tag text-[10px] uppercase tracking-[0.2em] text-orange-700 dark:text-orange-300 bg-orange-100/80 dark:bg-orange-400/15 px-3 py-1 rounded-full self-start">
+                      {prog.status}
+                    </span>
+                  )}
+                </article>
+              );
+
+              if (prog.href && prog.external) {
+                return (
+                  <a
+                    key={prog.num}
+                    href={prog.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group block"
+                  >
+                    {card}
+                  </a>
+                );
+              }
+
+              if (prog.href) {
+                return (
+                  <Link key={prog.num} to={prog.href} className="group block">
+                    {card}
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={prog.num} className="group">
+                  {card}
                 </div>
-                <h3 className="font-serif-display text-2xl text-stone-900 dark:text-stone-100 mb-3 leading-tight">
-                  {prog.title}
-                </h3>
-                <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed flex-1">
-                  {prog.body}
-                </p>
-              </article>
-            ))}
+              );
+            })}
           </div>
 
           <div className="relative bg-stone-900 dark:bg-stone-900 rounded-lg p-8 md:p-10 overflow-hidden">
@@ -207,7 +245,7 @@ export default function AboutMission() {
               <h3 className="font-serif-display text-2xl md:text-3xl text-white mb-4">
                 Open source community
               </h3>
-              <p className="text-stone-300 text-[15px] leading-relaxed max-w-2xl">
+              <p className="text-stone-300 text-[15px] leading-relaxed">
                 Our entire community is open source. Hosted on GitHub, anyone can contribute — suggesting improvements, editing pages, adding resources, and helping shape what this community becomes. High Impact Mathematicians is not a static platform; it is a living, evolving project, built collectively by the people who care most about it.
               </p>
             </div>
@@ -216,7 +254,7 @@ export default function AboutMission() {
       </section>
 
       {/* SUCCESS METRICS */}
-      <section className="bg-white dark:bg-stone-950">
+      <section className="bg-cream dark:bg-stone-900/40">
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-24">
           <div className="mb-12">
             <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-4">
@@ -226,7 +264,7 @@ export default function AboutMission() {
               Success metrics
             </h2>
             <div className="ea-rule mb-6" />
-            <p className="text-stone-600 dark:text-stone-400 text-[16px] leading-relaxed max-w-2xl">
+            <p className="text-stone-600 dark:text-stone-400 text-[16px] leading-relaxed">
               We track two core indicators to evaluate whether we are actually redirecting mathematical talent toward high-impact causes.
             </p>
           </div>
@@ -266,7 +304,7 @@ export default function AboutMission() {
       </section>
 
       {/* THEORY OF CHANGE */}
-      <section className="bg-cream dark:bg-stone-900/40">
+      <section className="bg-white dark:bg-stone-950">
         <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
 
           <div className="mb-14">
@@ -277,59 +315,12 @@ export default function AboutMission() {
               Theory of change
             </h2>
             <div className="ea-rule mb-8" />
-            <p className="text-stone-600 dark:text-stone-400 max-w-3xl text-[17px] leading-relaxed">
-              The world's most pressing problems — biosecurity threats, pandemic preparedness, climate change, and farmed animal welfare — are severely neglected and deeply quantitative in nature. Yet the mathematicians and quantitative thinkers best equipped to work on them are rarely guided toward these cause areas. High Impact Mathematicians addresses this directly by reaching mathematicians and quantitative thinkers worldwide and equipping them with the knowledge, community, and resources to act.
+            <p className="text-stone-600 dark:text-stone-400 text-[17px] leading-relaxed">
+              The world's most pressing problems — biosecurity threats, pandemic preparedness, climate change, and farmed animal welfare — are severely neglected and deeply quantitative in nature. Yet the mathematicians and quantitative thinkers best equipped to work on them are rarely guided toward these cause areas.
             </p>
-          </div>
-
-          {/* Row 1: Because + We build / image */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16 items-center">
-            <div className="space-y-10">
-              <div>
-                <div className="flex items-baseline gap-3 mb-3">
-                  <span className="font-serif-display text-3xl text-orange-600 dark:text-orange-400 leading-none">∵</span>
-                  <span className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400">Because</span>
-                </div>
-                <p className="text-stone-700 dark:text-stone-300 text-[17px] leading-[1.8]">
-                  Most mathematicians and quantitative thinkers are never exposed to concrete links between their skills and high-priority global problems — and no unified peer community exists for them in the EA ecosystem. The gap is not one of talent or willingness; it is one of awareness and infrastructure.
-                </p>
-              </div>
-              <div>
-                <div className="flex items-baseline gap-3 mb-3">
-                  <span className="font-serif-display text-3xl text-orange-600 dark:text-orange-400 leading-none">→</span>
-                  <span className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400">We build</span>
-                </div>
-                <p className="text-stone-700 dark:text-stone-300 text-[17px] leading-[1.8]">
-                  A global, open, mathematician-to-mathematician platform with an introductory curriculum, an open-source skills-to-cause-area resource hub, and collaborative project infrastructure. A community where people can find each other, learn together, and produce work that matters.
-                </p>
-              </div>
-            </div>
-            <ImagePlaceholder label="Community image" aspect="aspect-[4/3]" />
-          </div>
-
-          {/* Row 2: image / So that + Resulting in */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16 items-center">
-            <ImagePlaceholder label="Impact image" aspect="aspect-[4/3]" />
-            <div className="space-y-10">
-              <div>
-                <div className="flex items-baseline gap-3 mb-3">
-                  <span className="font-serif-display text-3xl text-orange-600 dark:text-orange-400 leading-none">∴</span>
-                  <span className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400">So that</span>
-                </div>
-                <p className="text-stone-700 dark:text-stone-300 text-[17px] leading-[1.8]">
-                  Quantitatively skilled people gain the knowledge, peer connections, and motivation to direct their work toward cause areas that matter. Members leave with a clearer sense of where they can contribute most — and the community to help them do it.
-                </p>
-              </div>
-              <div>
-                <div className="flex items-baseline gap-3 mb-3">
-                  <span className="font-serif-display text-3xl text-orange-600 dark:text-orange-400 leading-none">⇒</span>
-                  <span className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400">Resulting in</span>
-                </div>
-                <p className="text-stone-700 dark:text-stone-300 text-[17px] leading-[1.8]">
-                  More mathematical talent applied to biosecurity, climate change, global health, animal welfare, and AI safety — and a replicable model for other STEM-specific communities in EA.
-                </p>
-              </div>
-            </div>
+            <p className="mt-5 text-stone-600 dark:text-stone-400 text-[17px] leading-relaxed">
+              High Impact Mathematicians addresses this by building a global, open community that connects peers, shares resources, and helps people direct their skills toward the cause areas where they can do the most good.
+            </p>
           </div>
 
           {/* Infographic placeholder */}
@@ -343,18 +334,18 @@ export default function AboutMission() {
         </div>
       </section>
 
-      {/* PRINCIPLES, VALUES & PHILOSOPHY */}
-      <section className="bg-white dark:bg-stone-950">
-        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="mb-16">
+      {/* PRINCIPLES & PHILOSOPHY */}
+      <section className="bg-cream dark:bg-stone-900/40">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-24">
+          <div>
             <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-4">
-              Who we are
+              Our Cultural DNA
             </div>
             <h2 className="font-serif-display text-3xl md:text-5xl text-stone-900 dark:text-stone-100 mb-4">
-              Principles, values &amp; philosophy
+              Principles &amp; philosophy
             </h2>
             <div className="ea-rule mb-6" />
-            <div className="space-y-4 text-stone-600 dark:text-stone-400 max-w-3xl text-[16px] leading-relaxed">
+            <div className="space-y-4 text-stone-600 dark:text-stone-400 text-[16px] leading-relaxed">
               <p>
                 High Impact Mathematicians does not require its members to subscribe to any particular ideology or school of thought. We are a broad, welcoming community. That said, our movement draws heavily on ideas emerging from the effective altruism community — because we believe EA has surfaced some of the most rigorous and practically useful frameworks for thinking about how to do the most good.
               </p>
@@ -363,29 +354,32 @@ export default function AboutMission() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div>
-            <h3 className="font-serif-display text-2xl text-stone-900 dark:text-stone-100 mb-8">
+      {/* VALUES */}
+      <section className="bg-white dark:bg-stone-950">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="mb-12">
+            <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-4">
               Our values
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {PRINCIPLES.map((p, i) => (
-                <article
-                  key={p.title}
-                  className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-lg p-7 md:p-8 hover:border-orange-400/50 dark:hover:border-orange-500/40 transition-colors"
-                >
-                  <div className="font-mono-tag text-[11px] uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-3">
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <h4 className="font-serif-display text-[22px] leading-tight text-stone-900 dark:text-stone-100 mb-3">
-                    {p.title}
-                  </h4>
-                  <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed">
-                    {p.body}
-                  </p>
-                </article>
-              ))}
             </div>
+            <h2 className="font-serif-display text-3xl md:text-5xl text-stone-900 dark:text-stone-100 mb-4">
+              The values that guide our work
+            </h2>
+            <div className="ea-rule mb-6" />
+          </div>
+          <div className="space-y-10">
+            {PRINCIPLES.map((p) => (
+              <div key={p.title}>
+                <h4 className="inline-flex items-center font-mono-tag text-[14px] md:text-[15px] uppercase tracking-[0.24em] text-orange-700 dark:text-orange-300 font-semibold bg-orange-100/80 dark:bg-orange-400/15 px-3 py-1 rounded">
+                  {p.title.toUpperCase()}
+                </h4>
+                <p className="mt-3 text-stone-600 dark:text-stone-400 text-[16px] leading-relaxed">
+                  {p.body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
