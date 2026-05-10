@@ -4,44 +4,44 @@ import { Link } from "react-router-dom";
 const PRINCIPLES = [
   {
     title: "Inclusive & Quantitatively Driven",
-    body: "We welcome mathematicians and quantitative thinkers across backgrounds, career stages, and levels of experience. You do not need to arrive as an expert in effective altruism to contribute meaningfully. What matters is a genuine commitment to using your skills thoughtfully in service of high-impact work.",
+    body: "We welcome mathematicians and quantitative thinkers across backgrounds, career stages, and levels of experience. You do not need to arrive as an expert in effective altruism to contribute meaningfully. What matters is a genuine commitment to using your skills thoughtfully.",
   },
   {
     title: "Collaborative",
-    body: "We believe the world's most important problems are too complex to solve in isolation. Strong progress comes from open collaboration, peer feedback, and shared ownership of ideas. We build structures that help people think together, improve each other's work, and move from discussion to action.",
+    body: "We believe that progress in solving the world's most important problems comes from open collaboration, peer feedback, and shared ownership of ideas. We encourage collaboration, and group particiption in projects to iterate upon each others' ideas and feedback.",
   },
   {
     title: "Open Truth-Seeking",
-    body: "We treat belief as provisional and update when better evidence appears. Being willing to revise assumptions is not a weakness; it is a core part of rigorous reasoning. Our culture rewards curiosity, intellectual honesty, and clarity over defensiveness.",
+    body: "We treat belief as provisional and update when better evidence appears. Being willing to revise assumptions is a core part of rigorous reasoning.",
   },
   {
     title: "Honest & Epistemically Humble",
-    body: "We reason transparently and make our assumptions explicit whenever possible. Epistemic humility means recognizing uncertainty, sharing limits honestly, and welcoming critique. We would rather improve a model together than preserve confidence in a weak argument.",
+    body: "We reason transparently and make our assumptions explicit whenever possible. Epistemic humility means recognizing uncertainty, and welcoming critique. We would rather improve our reasoning together than preserve confidence in a weak argument.",
   },
   {
     title: "Impartially Altruistic",
-    body: "We take an expansive view of moral concern that extends across borders, identities, and species. Geographic proximity or familiarity alone should not determine whose wellbeing matters. We aim to direct effort where suffering is greatest and where carefully applied quantitative work can help most.",
+    body: "We take a 'radical' view of empathy that extends across borders, identities, and species. Geographic proximity or familiarity alone should not determine which cause areas are worth pursuing. We aim to direct effort where suffering is greatest and where carefully applied quantitative work can help most.",
   },
 ];
 
 const PROGRAMS = [
   {
     num: "01",
-    title: "Resource Hub",
-    body: "A curated library of articles, books, research, and guides designed to help members understand high-impact cause areas and explore how their mathematical skills can be applied to them. Whether you're new to effective altruism or already familiar with the landscape, the Resource Hub gives you a clear starting point and a deeper foundation to build from.",
+    title: "Resource hub",
+    body: "A curated library of articles and books designed to help members understand high-impact cause areas and explore how their mathematical skills can be applied to them. Whether you're new to effective altruism or already familiar with the landscape, the Resource Hub can give you a clear starting point and a deeper foundation to build upon.",
     href: "/learn/resources",
   },
   {
     num: "02",
-    title: "Community Forum",
-    body: "Hosted on GitHub, our open forum is where the community comes alive. Members can share ideas, comment on proposals, collaborate on projects, and build on each other's work. It's a space designed for collective thinking — not passive consumption. It encourages communities to join in with members to make comments, suggest ideas, and help each other out in a collaborative environment.",
+    title: "Community forum",
+    body: "Our community forum hosted on GitHub Discussions allows members to share ideas, comment on proposals, collaborate on projects, and build on each other's work. It's a space designed for collective thinking and encourages communities to join in with members to make comments, suggest ideas, and help each other out.",
     href: "https://github.com/orgs/High-Impact-Mathematicians/discussions",
     external: true,
   },
   {
     num: "03",
-    title: "Introductory Course",
-    body: "A structured course delivered through this website, designed for those just getting started. The course introduces the core ideas in our space, outlines the most important cause areas, and helps newcomers find their footing and their path to impact.",
+    title: "Introductory course",
+    body: "A structured course delivered through this website, designed for those just getting started. The course introduces the core ideas in our space, outlines the most important cause areas, and helps newcomers find their footing.",
     status: "In progress",
   },
 ];
@@ -152,7 +152,7 @@ export default function AboutMission() {
               </p>
               <div className="mt-6 w-12 h-px bg-orange-500/60" />
               <p className="mt-6 text-stone-400 text-[15px] leading-[1.75]">
-                Today, the mathematical community's most visible spaces tend to be competitive mathematics forums and academic circles, which are arguably oriented around demonstrating ability or advancing academia. While these communities are valuable, they celebrate what mathematicians can do, without using their skills to address real-world challenges.
+                Today, the mathematical community's most visible spaces tend to be competitive mathematics forums and academic circles, which are arguably oriented around demonstrating ability or advancing academia. While these communities are valuable, they celebrate what mathematicians can do, without often using their skills to address real-world challenges.
               </p>
               <p className="mt-4 text-stone-400 text-[15px] leading-[1.75]">
                 We are building a community defined by contribution to the world's most important cause areas. We want to connect like-minded individuals, surface high-impact opportunities, foster meaningful collaboration, and grow a space for mathematicians to use their abilities for good.
@@ -174,7 +174,7 @@ export default function AboutMission() {
             </h2>
             <div className="ea-rule mb-6" />
             <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-[16px]">
-              We work with mathematicians and quantitative thinkers of all ages and backgrounds — from undergraduate students to seasoned researchers — helping them direct their skills toward the world's most pressing problems. Our work is organized around three core programmes:
+              We work with mathematicians and quantitative thinkers of all ages and backgrounds to help them in directing their skills toward the world's most pressing problems. Our work is centered around three core initiatives:
             </p>
           </div>
 
@@ -246,7 +246,7 @@ export default function AboutMission() {
                 Open source community
               </h3>
               <p className="text-stone-300 text-[15px] leading-relaxed">
-                Our entire community is open source. Hosted on GitHub, anyone can contribute — suggesting improvements, editing pages, adding resources, and helping shape what this community becomes. High Impact Mathematicians is not a static platform; it is a living, evolving project, built collectively by the people who care most about it.
+                Our entire community is open source. Since it is hosted on GitHub, anyone can contribute, suggest improvements, edit pages, add resources, and help shape what this community becomes. High Impact Mathematicians is therefore, an ever-evolving project, built collectively by the people who care most about it.
               </p>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function AboutMission() {
             </h2>
             <div className="ea-rule mb-6" />
             <p className="text-stone-600 dark:text-stone-400 text-[16px] leading-relaxed">
-              We track two core indicators to evaluate whether we are actually redirecting mathematical talent toward high-impact causes.
+              We track two core indicators to evaluate whether we are actually achieving our goal of redirecting mathematical talent toward high-impact causes.
             </p>
           </div>
 
@@ -281,7 +281,7 @@ export default function AboutMission() {
                 Participant perspective shift
               </h3>
               <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed">
-                The number of participants who changed their stance on how mathematics can be used for impactful causes, and which causes matter most. We measure this through a form completed after participants finish the introductory fellowship.
+                The number of participants who changed their stance on how mathematics can be used for impactful causes, and which causes matter most. We measure this through a survey completed after participants finish the introductory course.
               </p>
             </article>
 
@@ -296,7 +296,7 @@ export default function AboutMission() {
                 Projects developed
               </h3>
               <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed">
-                The number of projects developed that aim to do good using mathematics and direct work toward high-impact cause areas.
+                The number of projects developed that aim to do good using mathematics and quantiative tools, and direct work toward high-impact cause areas.
               </p>
             </article>
           </div>
@@ -316,17 +316,14 @@ export default function AboutMission() {
             </h2>
             <div className="ea-rule mb-8" />
             <p className="text-stone-600 dark:text-stone-400 text-[17px] leading-relaxed">
-              The world's most pressing problems — biosecurity threats, pandemic preparedness, climate change, and farmed animal welfare — are severely neglected and deeply quantitative in nature. Yet the mathematicians and quantitative thinkers best equipped to work on them are rarely guided toward these cause areas.
-            </p>
-            <p className="mt-5 text-stone-600 dark:text-stone-400 text-[17px] leading-relaxed">
-              High Impact Mathematicians addresses this by building a global, open community that connects peers, shares resources, and helps people direct their skills toward the cause areas where they can do the most good.
+              The world's most pressing problems are severely neglected and deeply quantitative in nature. Yet the mathematicians and quantitative thinkers best equipped to work on them are rarely guided toward these cause areas. High Impact Mathematicians addresses this by building a global, open community that connects peers, shares resources, and helps people direct their skills toward the cause areas where they can do the most good.
             </p>
           </div>
 
           {/* Infographic placeholder */}
           <div className="mt-4">
             <div className="font-mono-tag text-[11px] uppercase tracking-[0.2em] text-stone-400 dark:text-stone-600 mb-4">
-              Theory of change — infographic
+              Theory of change 
             </div>
             <div className="w-full aspect-[21/9] rounded-lg overflow-hidden border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/60">
               <img
@@ -354,10 +351,7 @@ export default function AboutMission() {
             <div className="ea-rule mb-6" />
             <div className="space-y-4 text-stone-600 dark:text-stone-400 text-[16px] leading-relaxed">
               <p>
-                High Impact Mathematicians does not require its members to subscribe to any particular ideology or school of thought. We are a broad, welcoming community. That said, our movement draws heavily on ideas emerging from the effective altruism community — because we believe EA has surfaced some of the most rigorous and practically useful frameworks for thinking about how to do the most good.
-              </p>
-              <p>
-                In particular, we find the ITN framework — evaluating cause areas by their Importance, Tractability, and Neglectedness — to be an exceptionally clear-headed tool for identifying where mathematical talent can have the greatest real-world impact. We use it not as dogma, but as a compass.
+                High Impact Mathematicians does not require its members to subscribe to any particular school of thought. That said, our movement draws heavily on ideas emerging from the effective altruism community. This is because we believe EA has surfaced some very useful frameworks and heuristics for thinking about how to do the most good.
               </p>
             </div>
           </div>
