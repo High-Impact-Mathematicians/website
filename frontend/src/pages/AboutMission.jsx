@@ -70,13 +70,13 @@ export default function AboutMission() {
         </div>
         <div className="relative w-full max-w-[1240px] mx-auto px-6 md:px-10 py-20 md:py-28">
           <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-6 em-fade-up">
-            Mission &amp; Values
+            Our Philosophy
           </div>
           <h1 className="font-serif-display text-5xl md:text-7xl tracking-tight leading-[0.98] max-w-4xl text-stone-900 dark:text-stone-100 em-fade-up em-delay-1">
-            An online community with a specific goal
+            Our mission, values and strategy
           </h1>
           <p className="mt-6 max-w-3xl font-serif-display italic text-stone-500 dark:text-stone-400 text-xl md:text-2xl leading-snug em-fade-up em-delay-2">
-            Mathematicians are unusually good at noticing when an argument doesn&#39;t quite add up. We think the world would be better if more of that energy were pointed at the problems that actually matter.
+            Mathematicians are unusually good at noticing when an argument doesn&#39;t quite add up. We think the world would be better if more of that energy were pointed at the problems that matter most.
           </p>
         </div>
       </section>
@@ -100,21 +100,18 @@ export default function AboutMission() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
             <div className="md:col-span-12 space-y-5 text-stone-700 dark:text-stone-300 text-[17px] leading-[1.75] max-w-5xl">
               <p>
-                Every year, thousands of mathematicians and quantitatively trained graduates enter academia, finance, and industry. The overwhelming majority spend their careers on problems that are intellectually rich; however, they are largely disconnected from the world's most urgent challenges.
+                Every year, thousands of mathematicians and quantitatively trained graduates enter academia, finance, and industry. The overwhelming majority spend their careers on problems that are intellectually rich; however, they are largely disconnected from the world's most pressing problems.
               </p>
               <blockquote className="my-8 pl-6 border-l-4 border-orange-500 dark:border-orange-400">
                 <p className="font-serif-display text-2xl md:text-3xl text-stone-900 dark:text-stone-100 leading-snug italic">
-                  This isn&#39;t a failure of talent or ambition. It&#39;s a failure of direction.
+                  The world needs more mathematicians working on important problems.
                 </p>
               </blockquote>
               <p>
-                The world's most pressing cause areas — from biosecurity and climate change to global health and farmed animal welfare — are severely underpowered. They don't lack funding alone; they lack rigorous, quantitative minds willing to turn their skills toward them. These problems are technically complex, deeply neglected, and in many cases, tractable — exactly the kind of challenges that mathematicians are uniquely equipped to tackle.
+                The world's most pressing cause areas, from biosecurity and climate change to global health and farmed animal welfare, are severely underpowered. They lack quantitative minds willing to turn their skills toward them. These problems are technically complex, very neglected, and in many cases, tractable. 
               </p>
               <p>
-                Yet no unified community exists for them to do so. There is no dedicated space where mathematicians and quantitative thinkers can come together to explore high-impact opportunities, exchange ideas, develop proposals, and direct their skills toward work that genuinely matters. No shared forum. No collective knowledge base. No clear on-ramp.
-              </p>
-              <p>
-                The result? Talented people — including many students and early-career researchers — simply don't know what's possible. It isn't obvious how mathematical expertise translates into meaningful impact. Many underestimate what they could contribute. Most have far more potential to do good than they realise — they just haven't been shown how.
+                Unfortunately, no unified community exists for them to do so. There is no dedicated space where mathematicians and quantitative thinkers can come together to explore high-impact opportunities, exchange ideas, develop proposals, and direct their skills toward work that genuinely matters. As a result, so many talented people simply don't know what's possible with their skills. Many underestimate what they could contribute. Most have far more potential to do good than they realise!
               </p>
             </div>
           </div>
@@ -137,7 +134,7 @@ export default function AboutMission() {
                   Vision
                 </h6>
                 <p className="font-serif-display text-3xl md:text-4xl text-white leading-[1.2]">
-                  A world where mathematicians and quantitative thinkers direct their exceptional skills toward humanity's most important problems.
+                  We envision a world where mathematicians and quantitative thinkers direct their skills toward humanity's most pressing problems.
                 </p>
               </div>
               <ImagePlaceholder label="Vision image" aspect="aspect-[16/9]" />
@@ -151,10 +148,10 @@ export default function AboutMission() {
               </p>
               <div className="mt-6 w-12 h-px bg-orange-500/60" />
               <p className="mt-6 text-stone-400 text-[15px] leading-[1.75]">
-                Today, the mathematical community's most visible spaces — Olympiad forums, competitive mathematics networks, academic circles — are oriented around personal achievement: demonstrating ability, winning prizes, securing places at elite institutions. These communities are valuable, but they are largely inward-facing. They celebrate what mathematicians can do, without asking what mathematicians should do.
+                Today, the mathematical community's most visible spaces tend to be competitive mathematics forums and academic circles, which are arguably oriented around demonstrating ability or advancing academia. While these communities are valuable, they celebrate what mathematicians can do, without using their skills to address real-world challenges.
               </p>
               <p className="mt-4 text-stone-400 text-[15px] leading-[1.75]">
-                We are building something different. A community defined not by credentials, but by contribution — where the measure of success is not a score or an acceptance letter, but the real-world impact of the work being done. We will connect like-minded individuals, surface high-impact opportunities, foster meaningful collaboration, and grow a generation of mathematicians who use their abilities not just for themselves — but for everyone.
+                We are building a community defined by contribution to the world's most important cause areas. We want to connect like-minded individuals, surface high-impact opportunities, foster meaningful collaboration, and grow a space for mathematicians to use their abilities for good.
               </p>
             </div>
           </div>
