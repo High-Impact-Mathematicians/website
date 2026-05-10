@@ -36,7 +36,7 @@ export default function CauseAreas() {
               The ITN Framework
             </h2>
             <p className="mt-4 text-stone-600 dark:text-stone-400 text-base leading-relaxed">
-              Before diving in, it helps to know how cause areas are evaluated. The ITN framework is the standard lens used in effective altruism to ask: where does effort matter most?
+              Before diving in, it helps to know how cause areas are evaluated. The ITN framework is the lens we use when deciding which problems are worth working on.
             </p>
           </div>
 
@@ -45,12 +45,12 @@ export default function CauseAreas() {
               {
                 letter: "I",
                 title: "Importance",
-                description: "How large is the scale of this problem? Importance asks us to consider how many lives are affected and how severely — measuring the total good we could achieve by making progress on it.",
+                description: "How large is the scale of this problem? How many beings are affected and how severely? What is the total good we could achieve by making progress on this problem?",
               },
               {
                 letter: "T",
                 title: "Tractability",
-                description: "Is meaningful progress achievable? Tractability asks whether concerted effort can actually move the needle — whether known levers exist, and whether additional resources translate into real results.",
+                description: "Is meaningful progress actually achievable? Tractability asks whether concerted effort can actually move the needle.",
               },
               {
                 letter: "N",

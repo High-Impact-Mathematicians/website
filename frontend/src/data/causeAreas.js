@@ -10,7 +10,7 @@ export const CAUSE_AREAS = [
     slug: "biosecurity",
     title: "Biosecurity",
     short:
-      "Preventing engineered pandemics — among the few plausible extinction-level risks facing humanity this century.",
+      "Preventing engineered pandemics and biosecurity threats that pose extinction-level risks facing humanity.",
     image: biosecurityImg,
     itn: [
       {
@@ -111,7 +111,7 @@ export const CAUSE_AREAS = [
     slug: "ai-safety",
     title: "AI Safety & Governance",
     short:
-      "Advanced AI systems could, if misaligned with human values or deliberately misused, cause irreversible harm at global scale.",
+      "Advanced AI systems could, if misaligned with human values, cause irreversible harm at global scale.",
     image: aiSafetyImg,
     itn: [
       {
@@ -154,7 +154,7 @@ export const CAUSE_AREAS = [
     slug: "animal-welfare",
     title: "Animal Welfare",
     short:
-      "More than 80 billion land animals are slaughtered annually, the vast majority in factory farm conditions involving extreme confinement and chronic pain.",
+      "More than 80 billion land animals are slaughtered annually, the vast majority in factory farm conditions involving extreme confinement and suffering.",
     image: animalWelfareImg,
     itn: [
       {
@@ -202,7 +202,7 @@ export const CAUSE_AREAS = [
     slug: "climate-change",
     title: "Climate Change",
     short:
-      "Warming already drives measurable harm globally — and specific neglected niches remain highly tractable for mathematicians.",
+      "Warming already drives measurable harm globally and specific neglected niches remain very pressing.",
     image: climateChangeImg,
     itn: [
       {
