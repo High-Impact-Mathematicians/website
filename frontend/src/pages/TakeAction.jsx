@@ -23,22 +23,22 @@ const STEPS = [
   {
     number: "01",
     Icon: Users,
-    title: "Join the GitHub Forum",
-    body: "Our GitHub Discussions forum is the heartbeat of this community. Browse open questions, connect with mathematicians working on high-impact problems, and see what's already being built.",
+    title: "Join the Community Forum",
+    body: "Our Community Forum hosted on GitHub Discussions forum allows you to browse open questions, connect with mathematicians working on high-impact problems, and see what's already being built.",
     cta: { label: "Open the forum", href: FORUM_URL, external: true },
   },
   {
     number: "02",
     Icon: PenLine,
     title: "Make Your First Post",
-    body: "Introduce yourself, share a problem you're curious about, or post a draft idea. The forum is intentionally low-stakes and welcomes half-formed thoughts. Every great project starts with a single question.",
+    body: "Introduce yourself, share a problem you're curious about, or post a draft idea. The forum is intentionally low-stakes and welcomes half-formed thoughts.",
     cta: { label: "Start a discussion", href: FORUM_URL, external: true },
   },
   {
     number: "03",
     Icon: Lightbulb,
-    title: "Work on an Impactful Cause Area",
-    body: "Browse cause areas — from biosecurity to AI safety to climate modelling — and find where your mathematical skills can do the most good. Write a problem profile, join a project, or start your own.",
+    title: "Pick an Impactful Cause Area",
+    body: "Browse cause areas, from biosecurity to AI safety to climate change, and find where your mathematical skills can do the most good. Write a problem profile, join a project, or start your own.",
     cta: { label: "Explore cause areas", to: "/learn/cause-areas" },
   },
 ];
@@ -169,10 +169,10 @@ export default function TakeAction() {
                     Join the community
                   </div>
                   <h1 className="font-serif-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-stone-900 dark:text-stone-100">
-                    Become a High-Impact Mathematician
+                    Become a High Impact Mathematician
                   </h1>
                   <p className="mt-4 md:mt-6 text-stone-600 dark:text-stone-400 text-base md:text-xl leading-relaxed max-w-lg">
-                    Join a growing community of mathematicians directing their skills toward the world's most pressing problems. Connect, collaborate, and contribute to cause areas where your work can matter most.
+                    Join a growing community of mathematicians directing their skills toward the world's most pressing problems. Connect, collaborate, and contribute to cause areas where your skills can matter most.
                   </p>
                   <div className="mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
                     <a
@@ -218,7 +218,7 @@ export default function TakeAction() {
           <EASectionHeader
             kicker="Your Journey"
             title="Your roadmap"
-            subtitle="Three steps to get started and make your mark."
+            subtitle="Three simple steps to get started."
           />
 
           <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
