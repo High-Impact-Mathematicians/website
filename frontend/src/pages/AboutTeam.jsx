@@ -14,7 +14,7 @@ const FOUNDERS = [
   {
     name: "Kushal Pagarani",
     role: "Co-founder",
-    image: `${process.env.PUBLIC_URL}/images/kushal.jpg`,
+    image: `${process.env.PUBLIC_URL}/images/kushal.png`,
     linkedin: "https://www.linkedin.com/in/kushal-pagarani-333874226/",
     imageClassName: "object-[center_70%]",
   },
