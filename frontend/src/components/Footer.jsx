@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import { Github, Mail } from "lucide-react";
+import { MessageCircle, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -45,8 +45,9 @@ export default function Footer() {
           <div className="font-mono-tag text-[10px] uppercase tracking-[0.22em] text-stone-500 dark:text-stone-500 mb-4">Connect</div>
           <ul className="space-y-2.5 text-sm text-stone-700 dark:text-stone-300">
             <li>
-              <a href="https://github.com/orgs/High-Impact-Mathematicians/discussions" target="_blank" rel="noreferrer" className="hover:text-orange-700 dark:hover:text-orange-400 inline-flex items-center gap-2">
-                <Github size={14} /> GitHub Forum
+              {/* TODO: replace with the real HIM Discord invite before publishing. */}
+              <a href="https://discord.gg/yCWmXRwxdW" target="_blank" rel="noreferrer" className="hover:text-orange-700 dark:hover:text-orange-400 inline-flex items-center gap-2">
+                <MessageCircle size={14} /> Discord
               </a>
             </li>
             <li>

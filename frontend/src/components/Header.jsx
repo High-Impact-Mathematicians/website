@@ -152,7 +152,7 @@ export default function Header() {
             data-testid="header-cta-take-action"
             onClick={handleTopOfPageClick("/take-action")}
           >
-            Take action
+            HIMPact Hacks
           </Link>
           <button
             className="lg:hidden text-stone-900 dark:text-stone-100 p-2"

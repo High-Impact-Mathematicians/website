@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// TODO: replace with the real HIM Discord invite before publishing.
+const DISCORD_URL = "https://discord.gg/yCWmXRwxdW";
+
 const PRINCIPLES = [
   {
     title: "Inclusive & Quantitatively Driven",
@@ -27,21 +30,19 @@ const PRINCIPLES = [
 const PROGRAMS = [
   {
     num: "01",
-    title: "Resource hub",
-    body: "A curated pathway that helps mathematicians orient quickly. We highlight the best existing material and resources out there and map it to the questions mathematicians care about.",
-    href: "/learn/resources",
+    title: "Community and events",
+    body: "A tight-knit, welcoming Discord community, launched by HIMPact Hacks, our first hackathon, and kept alive by recurring bi-weekly sessions, expert seminars, and collaborative ideation so mathematicians can meet peers and build together.",
+    href: "/take-action",
   },
   {
     num: "02",
-    title: "Project hub",
-    body: "We connect projects that need quantitative or mathematical expertise with people who can contribute. This includes open research questions, collaborations, and partner-led problems worth exploring.",
+    title: "Projects board",
+    body: "We connect projects that need quantitative or mathematical expertise with people who can contribute, and give members a place to showcase what they build, from open research questions to collaborations and partner-led problems worth exploring.",
   },
   {
     num: "03",
-    title: "Community and events",
-    body: "A tight-knit, welcoming community. We run collaborative ideation, hackathons, workshops, and guest sessions so mathematicians can meet peers and build together.",
-    href: "https://github.com/orgs/High-Impact-Mathematicians/discussions",
-    external: true,
+    title: "Impact Hours",
+    body: "Our recurring bi-weekly sessions, part seminar and part office hours. Members share how their work is going, meet an influential high-impact mathematician, and keep pushing their projects forward together.",
   },
 ];
 
@@ -249,14 +250,22 @@ export default function AboutMission() {
             </div>
             <div className="relative">
               <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-400 mb-3">
-                Open source
+                Community
               </div>
               <h3 className="font-serif-display text-2xl md:text-3xl text-white mb-4">
-                Open source community
+                Join our server
               </h3>
-              <p className="text-stone-300 text-[15px] leading-relaxed">
-                Our entire community is open source. Since it is hosted on GitHub, anyone can contribute, suggest improvements, edit pages, add resources, and help shape what this community becomes. High Impact Mathematicians is therefore, an ever-evolving project, built collectively by the people who care most about it.
+              <p className="text-stone-300 text-[15px] leading-relaxed max-w-2xl">
+                Our community lives on Discord. It is where members meet, share what they are working on, ask for help, and find people to build with. Come and say hello.
               </p>
+              <a
+                href={DISCORD_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3.5 rounded-full font-medium transition-colors"
+              >
+                Join our Discord community
+              </a>
             </div>
           </div>
         </div>
@@ -274,7 +283,7 @@ export default function AboutMission() {
             </h2>
             <div className="ea-rule mb-6" />
             <p className="text-stone-600 dark:text-stone-400 text-[16px] leading-relaxed">
-              We track metrics that show whether the community is moving mathematical talent toward high-impact work.
+              We track metrics that show whether the community is moving mathematical talent toward high-impact work. HIMPact Hacks, our launch event, is where a lot of this starts, so it anchors what we measure first.
             </p>
           </div>
 
@@ -290,7 +299,7 @@ export default function AboutMission() {
                 Events and participation
               </h3>
               <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed">
-                The number of events organized and the number of attendees per event. We track the reach and depth of our engagement.
+                The number of events we run and how many people take part, starting with HIMPact Hacks registrations and active participants. We track the reach and depth of our engagement.
               </p>
             </article>
 
@@ -320,7 +329,7 @@ export default function AboutMission() {
                 Ideas generated
               </h3>
               <p className="text-stone-600 dark:text-stone-400 text-[15px] leading-relaxed">
-                The number of ideas generated for mathematical solutions to EA-relevant problems.
+                The number of ideas and projects generated for mathematical solutions to pressing problems, including everything built at HIMPact Hacks.
               </p>
             </article>
 
@@ -359,11 +368,10 @@ export default function AboutMission() {
             </p>
           </div>
 
-          {/* Infographic placeholder */}
-         <div className="mt-8">
+          <div className="mt-8">
             <img
-              src={`${process.env.PUBLIC_URL}/images/infographic.svg`}
-              alt="Theory of change infographic"
+              src={`${process.env.PUBLIC_URL}/images/toc.svg`}
+              alt="High Impact Mathematicians theory of change"
               loading="lazy"
               className="w-full h-auto object-contain"
             />
@@ -385,7 +393,8 @@ export default function AboutMission() {
             <div className="ea-rule mb-6" />
             <div className="space-y-4 text-stone-600 dark:text-stone-400 text-[16px] leading-relaxed">
               <p>
-                High Impact Mathematicians does not require its members to subscribe to any particular school of thought. That said, our movement draws heavily on ideas emerging from effective altruism and moral ambition. We believe EA has surfaced useful frameworks for thinking about how to do the most good, and moral ambition pushes us to take those conclusions seriously in our choices and careers.
+                High Impact Mathematicians does not require its members to subscribe to any particular school of thought. Our ideas have been shaped by a few of them, from effective altruism to Rutger Bregman&#39;s{" "}
+                <a href="https://rutgerbregman.com/books/moral-ambition" target="_blank" rel="noreferrer" className="em-link font-medium">moral ambition</a>, but we do not fully endorse or align ourselves with any single one. We take the parts we find useful, mostly the frameworks for thinking clearly about how to do the most good, and leave the rest. What holds us together is a shared commitment to pointing mathematical skill at the problems that matter, not any particular label.
               </p>
             </div>
           </div>

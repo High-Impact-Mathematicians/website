@@ -36,7 +36,9 @@ export default function CauseAreas() {
               The ITN Framework
             </h2>
             <p className="mt-4 text-stone-600 dark:text-stone-400 text-base leading-relaxed">
-              Before diving in, it helps to know how cause areas are evaluated. The ITN framework is the lens we use when deciding which problems are worth working on.
+              Before diving in, it helps to know how cause areas are evaluated. The ITN framework is the lens we use when deciding which problems are worth working on.{" "}
+              <a href="https://80000hours.org/articles/problem-framework/" target="_blank" rel="noreferrer" className="em-link font-medium">80,000 Hours</a>{" "}
+              has a good overview if you'd like to read more.
             </p>
           </div>
 
@@ -73,6 +75,12 @@ export default function CauseAreas() {
               </div>
             ))}
           </div>
+
+          <p className="mt-8 text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
+            ITN is one of many lenses for weighing up the world's problems. Others, like the{" "}
+            <a href="https://sdgs.un.org/goals" target="_blank" rel="noreferrer" className="em-link font-medium">UN Sustainable Development Goals</a>{" "}
+            and Moral Ambition&#39;s "sizeable, solvable, sorely overlooked" test, are worth knowing too. We share the causes below because we find them compelling and neglected, not because they are the only ones that matter.
+          </p>
         </div>
       </section>
 

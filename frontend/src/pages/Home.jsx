@@ -99,23 +99,18 @@ const TESTIMONIALS = [
     linkedin: "https://www.linkedin.com/in/jonah-boucher/",
   },
   {
-    quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.",
-    name: "Lorem Ipsum",
-    role: "Placeholder Role, Lorem Organization",
-    portrait: "https://placehold.co/400x400/e7e5e4/78716c?text=Photo",
+    quote: "If it weren't for spaces like these, I probably wouldn't have found myself in a career trajectory I'd feel the most fulfilled with, nor one that would lead me to do the most good that I can. As an A-level student just finishing my final exams, a community like this is exactly what I think others would seriously benefit from if they're unsure about what they'd like to do!",
+    name: "Muhammed Tariq",
+    role: (
+      <>
+        Facilitator, <a href="https://leaf.courses/" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">Leaf</a>
+      </>
+    ),
+    // TODO: add public/images/muhammed-tariq.jpeg (photo from Muhammed) — testimonial won't show a portrait until this file exists.
+    portrait: `${process.env.PUBLIC_URL}/images/muhammed-tariq.jpeg`,
+    linkedin: "https://www.linkedin.com/in/muhammed5371/",
   },
-  {
-    quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.",
-    name: "Lorem Ipsum",
-    role: "Placeholder Role, Lorem Organization",
-    portrait: "https://placehold.co/400x400/e7e5e4/78716c?text=Photo",
-  },
-  {
-    quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam.",
-    name: "Lorem Ipsum",
-    role: "Placeholder Role, Lorem Organization",
-    portrait: "https://placehold.co/400x400/e7e5e4/78716c?text=Photo",
-  },
+  // TODO: add Tharul + Merle testimonials once they reply.
 ];
 
 function TestimonialCarousel() {
@@ -548,7 +543,7 @@ export default function Home() {
                   High Impact Mathematicians is a global, open community built for early-career mathematicians and quantitative thinkers who want to direct their skills toward the world's most pressing problems. We believe mathematical talent is one of the most powerful and under-directed forces for good.
                 </p>
                 <p className="text-stone-700 dark:text-stone-300 text-[16px] leading-[1.75]">
-                  We do not reinvent the wheel for course content. Instead, we highlight the best existing resources and build the missing infrastructure: a dedicated community, a project hub, and a clear path from skills to impact.
+                  We do not reinvent the wheel for course content. Instead, we highlight the best existing resources and build the missing infrastructure, from a launch hackathon and a Discord community to a projects board and an information hub that turn skills into real-world impact.
                 </p>
               </div>
               <Link
@@ -567,14 +562,69 @@ export default function Home() {
                   To become the first unified platform where mathematicians learn about high-impact cause areas, collaborate on meaningful projects, and redirect their expertise toward the causes that matter most.
                 </p>
               </div>
-              <div className="border-t border-b border-stone-200 dark:border-stone-800 py-6">
+              <div className="border-t border-stone-200 dark:border-stone-800 py-6">
                 <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-2">Who we welcome</div>
                 <p className="text-stone-700 dark:text-stone-300 text-[16px] leading-[1.7]">
                   Any mathematician or quantitatively-minded person, at any career stage. You don't need to arrive as an expert. We welcome anyone who is interested in using their skills for something that matters.
                 </p>
               </div>
+              <div className="border-t border-b border-stone-200 dark:border-stone-800 py-6">
+                <div className="font-mono-tag text-[11px] uppercase tracking-[0.22em] text-orange-600 dark:text-orange-400 mb-2">What we run</div>
+                <p className="text-stone-700 dark:text-stone-300 text-[16px] leading-[1.7]">
+                  Our first iteration runs four things together, HIMPact Hacks (our launch hackathon), a projects board to showcase members' work, an information hub of opportunities and reading, and a Discord community for discussion and collaboration.
+                </p>
+              </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* HIMPACT HACKS — LAUNCH EVENT / ENTRY POINT */}
+      <section className="bg-cream dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800" data-testid="himpact-hacks-section">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-16 md:py-24">
+          <div className="relative overflow-hidden rounded-2xl bg-stone-900 dark:bg-stone-950 border border-stone-800 px-8 md:px-14 py-12 md:py-16">
+            <div
+              aria-hidden
+              className="absolute font-serif-display font-medium select-none pointer-events-none text-[280px] md:text-[420px] leading-none text-orange-500/[0.06] -right-10 top-1/2 -translate-y-1/2"
+            >
+              λ
+            </div>
+            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              <div className="lg:col-span-8">
+                <div className="flex flex-wrap items-center gap-3 mb-6">
+                  <span className="font-mono-tag text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-stone-900 bg-orange-400 px-2.5 py-1 rounded">
+                    Start here · our launch event
+                  </span>
+                  <span className="font-mono-tag text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-orange-300 border border-orange-400/40 px-2.5 py-1 rounded">
+                    24–26 July 2026
+                  </span>
+                </div>
+                <h2 className="font-serif-display text-4xl md:text-6xl tracking-tight leading-[1.02] text-white">
+                  HIMPact Hacks
+                </h2>
+                <p className="mt-5 text-stone-300 text-[16px] md:text-lg leading-[1.7] max-w-2xl">
+                  The entry point to our community. Over a single weekend, school and university students take a serious problem in a high-impact field and use mathematics to move it forward, then carry that work into everything we run next. Choose a cause, build a project, and compete for prizes.
+                </p>
+              </div>
+              <div className="lg:col-span-4 lg:justify-self-end flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto">
+                <a
+                  href="https://forms.gle/7re5qsqdorN7y9CV9"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3.5 text-sm font-medium tracking-wide transition-colors rounded-full"
+                  data-testid="himpact-hacks-cta"
+                >
+                  Register now <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+                <Link
+                  to="/take-action"
+                  className="inline-flex items-center justify-center gap-2 border border-stone-600 text-stone-100 hover:bg-white hover:text-stone-900 px-6 py-3.5 text-sm font-medium tracking-wide transition-colors rounded-full"
+                >
+                  How it works
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -588,11 +638,6 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
             {[
               {
-                label: "Effective Altruism",
-                href: "https://www.effectivealtruism.org/",
-                logo: `${process.env.PUBLIC_URL}/partner-logos/effective-altrusim.jpg`,
-              },
-              {
                 label: "Leaf",
                 href: "https://leaf.courses/",
                 logo: `${process.env.PUBLIC_URL}/partner-logos/leaf.webp`,
@@ -601,6 +646,11 @@ export default function Home() {
                 label: "High Impact Professionals",
                 href: "https://www.highimpactprofessionals.org/",
                 logo: `${process.env.PUBLIC_URL}/partner-logos/high-impact-professionals.jpg`,
+              },
+              {
+                label: "Non-Trivial",
+                href: "https://www.non-trivial.org/",
+                logo: `${process.env.PUBLIC_URL}/partner-logos/non-trivial.svg`,
               },
             ].map((p) => (
               <a
