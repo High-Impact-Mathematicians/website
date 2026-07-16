@@ -110,7 +110,18 @@ const TESTIMONIALS = [
     portrait: `${process.env.PUBLIC_URL}/images/muhammed-tariq.jpeg`,
     linkedin: "https://www.linkedin.com/in/muhammed5371/",
   },
-  // TODO: add Tharul + Merle testimonials once they reply.
+  {
+    quote: "The 'High-Impact Mathematicians' platform is such a fantastic initiative. Connecting with other mathematicians who share the same values as you can often be very difficult, but having a dedicated space to connect with peers who are equally driven to apply mathematical thinking to real-world problems is so valuable. It's the kind of community that will help one another prosper and make an even greater altruistic impact to the world.",
+    name: "Tharul Wanni Arachchige",
+    role: (
+      <>
+        Student
+      </>
+    ),
+    portrait: `${process.env.PUBLIC_URL}/images/tharul.jpeg`,
+    linkedin: "https://www.linkedin.com/in/tharul-wanni-arachchige-a23362321/",
+  },
+  // TODO: add Merle testimonial once she replies.
 ];
 
 function TestimonialCarousel() {

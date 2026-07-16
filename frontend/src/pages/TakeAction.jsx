@@ -61,6 +61,7 @@ const SPONSORS = [
   { label: "Non-Trivial", href: "https://www.non-trivial.org/", logo: `${process.env.PUBLIC_URL}/sponsor-logos/non-trivial.svg` },
   { label: ".xyz", href: "https://gen.xyz/", logo: `${process.env.PUBLIC_URL}/sponsor-logos/xyz.png` },
   { label: "Overleaf", href: "https://www.overleaf.com/", logo: `${process.env.PUBLIC_URL}/sponsor-logos/overleaf.jpg` },
+  { label: "The Daily Integral", href: "https://dailyintegral.com/", logo: `${process.env.PUBLIC_URL}/sponsor-logos/daily-integral.png` },
 ];
 
 const SCHEDULE = [
