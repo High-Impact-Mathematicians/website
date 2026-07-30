@@ -675,7 +675,7 @@
       "Chaitanya Nallani",
       "Avyukth Vadyar"
     ],
-    "causeArea": "global-health",
+    "causeArea": "biosecurity",
     "edition": "HIMPact Hacks '26",
     "description": "AMR kills millions and threatens modern medicine. Hospitals lack proactive ways to stop super-spreaders. We tackle this by using math to target isolation before outbreaks begin.",
     "coverImage": "/projects/2026-amr-hospitals.webp",
@@ -782,21 +782,6 @@
     "description": "Antivenom shortages leave Kenyan patients without timely treatment. This project tests how to place the same fixed stock more fairly and efficiently across regions.",
     "coverImage": "/projects/2026-antivenom-reserve.webp",
     "projectUrl": "https://drive.google.com/file/d/1qExZxrt56Q80Chp-3nVpy8VNlnhd1Rpt/view?usp=sharing",
-    "videoUrl": null,
-    "award": null
-  },
-  {
-    "id": "2026-biological-threat-matrix",
-    "title": "The 6-Dimensional Biological Threat Matrix",
-    "team": [
-      "Kanishk Kumar",
-      "Kevin Kushova"
-    ],
-    "causeArea": "biosecurity",
-    "edition": "HIMPact Hacks '26",
-    "description": "The core problem this project addresses is the severe misalignment in how global philanthropic and institutional resources are allocated toward biological threats.",
-    "coverImage": null,
-    "projectUrl": "https://drive.google.com/drive/folders/1jwflv9dauL0ps3bEz5sf-RJq_DqtAf7l?usp=drive_link",
     "videoUrl": null,
     "award": null
   },
