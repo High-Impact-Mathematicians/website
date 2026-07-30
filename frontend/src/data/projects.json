@@ -1,0 +1,932 @@
+[
+  {
+    "id": "2026-chx-cord-care",
+    "title": "CHX Cord Care Analysis",
+    "team": [
+      "Moeez Salman",
+      "Baqir Hussain"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Neonatal mortality is very high in sub-Saharan Africa and South Asia, and a common cause of infection is via the umbilical cord. CHX antiseptic is a very effective way of reducing that risk of infection.",
+    "coverImage": "/projects/2026-chx-cord-care.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1XMkgEe2lzSLa67Q9Fu-gseD2QxyFFbdX/edit?usp=sharing",
+    "videoUrl": null,
+    "award": "1st"
+  },
+  {
+    "id": "2026-feeding-without-sun",
+    "title": "Feeding the world without the sun",
+    "team": [
+      "Zaaim Khan",
+      "Tammy Lily Sisodiya",
+      "Abdulmalik Babalola"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "Nuclear winter can cut global crop calories by ~90%. We model how fast lignocellulosic sugar production can scale to close that gap, showing build speed matters far more than decision speed.",
+    "coverImage": "/projects/2026-feeding-without-sun.webp",
+    "projectUrl": "https://drive.google.com/file/d/1X9hxfyLLyDMiNATLElBtytaCYYU8LCT3/view?usp=sharing",
+    "videoUrl": null,
+    "award": "2nd"
+  },
+  {
+    "id": "2026-origami-shelters",
+    "title": "Which Origami Patterns Can Become Disaster Shelters?",
+    "team": [
+      "Rudra Boghani"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "In 2025, 117.8 million people were forcibly displaced worldwide, 68.7 million of them internally. Less help has been given and so I seek to find a way to help shelter those who desperately need it.",
+    "coverImage": "/projects/2026-origami-shelters.webp",
+    "projectUrl": "https://drive.google.com/file/d/1En5-3n4AZInsQS9wbTa4r-DQQX1eXqpT/view?usp=sharing",
+    "videoUrl": null,
+    "award": "3rd"
+  },
+  {
+    "id": "2026-green-guard",
+    "title": "The Green Guard",
+    "team": [
+      "Arie Biju",
+      "Alexander Lidblom"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Wound infections drive antimicrobial resistance through unnecessary treatment. Our biodegradable bandage detects and counters infection only when necessary, reducing overuse and improving health.",
+    "coverImage": "/projects/2026-green-guard.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1X7y2Bd2zqHN_UD-_ua7tm_ZcobwFZtmeHvK05gM6fow/edit?usp=sharing",
+    "videoUrl": null,
+    "award": "honourable-mention"
+  },
+  {
+    "id": "2026-conditional-features",
+    "title": "Identifiable Recovery of Conditional Features by Tensor Decomposition of a Layer's Weights",
+    "team": [
+      "Varsha Otta"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "A model can hide harmful behaviour behind two conditions holding at once, and current interpretability tools read each feature linearly; hence, interpretability for non-linear features is important.",
+    "coverImage": "/projects/2026-conditional-features.webp",
+    "projectUrl": "https://docs.google.com/document/d/1jF-z_mn2qj0QJFomzF29jYy7XfwB4TDuWqrPgNXVqq4/edit?usp=sharing",
+    "videoUrl": null,
+    "award": "honourable-mention"
+  },
+  {
+    "id": "2026-menstrual-health-targeting",
+    "title": "Prioritizing Under Constraint: Targeting Menstrual Health Resources in Climate-Vulnerable Communities",
+    "team": [
+      "Suyathi Mugunthan"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "I chose menstrual health in climate disasters; many organizations hand out supplies, but none can say which communities need them most. So I built a framework to rank vulnerability and allocate funds.",
+    "coverImage": "/projects/2026-menstrual-health-targeting.webp",
+    "projectUrl": "https://drive.google.com/file/d/1B6QlP_hfi67_PjbBAj4pk4YTMo1JmYvy/view?usp=sharing",
+    "videoUrl": null,
+    "award": "honourable-mention"
+  },
+  {
+    "id": "2026-tairseach",
+    "title": "Tairseach: Machine Learning for Social Housing Equity in Ireland",
+    "team": [
+      "Matas Roda"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "An empirical data analysis of government data to assess housing stress in Ireland, assess the impact of Rent Pressure Zone designation, social housing income thresholds and classify housing stress.",
+    "coverImage": "/projects/2026-tairseach.webp",
+    "projectUrl": "https://drive.google.com/file/d/1UP_PAGHviHqJLqCu8CPBJcx1-AhDysPo/view?usp=sharing",
+    "videoUrl": null,
+    "award": "honourable-mention"
+  },
+  {
+    "id": "2026-morphological-segmentation",
+    "title": "Linguistically-Informed Morphological Segmentation: Expanding AI Technologies to Under-Resourced Languages",
+    "team": [
+      "Henry Gagnier"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "Thousands of under-resourced and indigenous languages lack support in AI and language technologies, marginalizing their speakers. I propose and implement a novel linguistically informed solution.",
+    "coverImage": "/projects/2026-morphological-segmentation.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/11dKg6UxX5NqCuyn02tR9G9XBF-2W-77d?usp=sharing",
+    "videoUrl": null,
+    "award": "honourable-mention"
+  },
+  {
+    "id": "2026-poorer-countries-environmental",
+    "title": "To what extent are poorer countries vulnerable to global environmental dangers, and how can charities help?",
+    "team": [
+      "Yatharth Patwa",
+      "Alvin Choy"
+    ],
+    "causeArea": "climate-change",
+    "edition": "HIMPact Hacks '26",
+    "description": "We created a model for charities to optimize funds and assess disaster impact to impoverished nations. As emergency resources are finite, mathematical allocation maximizes life saving welfare.",
+    "coverImage": "/projects/2026-poorer-countries-environmental.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1nkp_mqbFwpe-DwQLWeIiNEWB37iX7MBi",
+    "videoUrl": null,
+    "award": "honourable-mention"
+  },
+  {
+    "id": "2026-global-population",
+    "title": "How sustainable is the current Global Population?",
+    "team": [
+      "Charlotte Best"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "This is on population growth and whether it is sustainable. It is important as it shows what areas the world needs to improve in to give everyone a positive quality of life and decrease poverty.",
+    "coverImage": "/projects/2026-global-population.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1w_0PWax4J3XKC93HQWXNPEujDMp_MTDwV_rvteptDl4/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-nkwa-alert",
+    "title": "Nkwa Alert: A Threshold-Triggered SMS Early Warning System for Flooding, Malaria, and Cholera in Ghana",
+    "team": [
+      "Shadrack Owusu Ansah"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Floods, malaria, and cholera kill thousands in Ghana yearly, hitting hardest those without phones or data plans. Nkwa Alert sends SMS warnings and health tips to any phone, no data or app needed.",
+    "coverImage": "/projects/2026-nkwa-alert.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1DU7uGIbbwpYzqqJDWEGaRPLSL4KiOQ2K/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-information-efficient-intelligence",
+    "title": "Information-efficient intelligence: A framework for adaptive information acquisition in AI",
+    "team": [
+      "Selma Mujacic"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "AI systems often process far more input than needed, wasting energy, time and computing resources. Our project enables models to acquire only the information required for reliable decisions.",
+    "coverImage": "/projects/2026-information-efficient-intelligence.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1C2JbP5G8crB-U14p6WYkL4FXf54dKI4M",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-ai-takeover-probability",
+    "title": "Predicting the probability of AI taking over the human race",
+    "team": [
+      "Nithusiga Selvamukunthan"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "The biggest fear right now is whether AI will take over humanity, therefore I want to investigate whether this fear is true and show that AI is something to aid us if used correctly, not to be feared.",
+    "coverImage": "/projects/2026-ai-takeover-probability.webp",
+    "projectUrl": "https://docs.google.com/document/d/1Wh2EsVQ3aJ9kGFa7cmjKiZUVFrphk6Ca8hONvrVRzRg/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-aflatoxin-crisis",
+    "title": "A Physical Solution to the Aflatoxin Crisis",
+    "team": [
+      "Elena Patel"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Aflatoxins are deadly, heat-resistant fungal toxins that affect crops such as maize and peanuts. Affecting over 500 million people, they cause severe liver failure, cancer, and stunted growth.",
+    "coverImage": "/projects/2026-aflatoxin-crisis.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/11cACdC-FOETVaR8xaLJBncc4cTuc-Vl_uz3w9286lTI/edit",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-defeating-ai-surveillance",
+    "title": "Defeating AI Surveillance",
+    "team": [
+      "Hanya Mursaleen"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "I chose AI Governance. Technology is becoming increasingly sophisticated, privacy of individuals is nothing but an illusion; to tackle this problem I made this encryption and decryption algorithm.",
+    "coverImage": "/projects/2026-defeating-ai-surveillance.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1fkqYsBI1x8kq0vr-xSYA2vIUi1aSR76fBG-au4MiGP0/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-food-bank-allocation",
+    "title": "Effective Food Bank Allocation Resource Distribution",
+    "team": [
+      "Rajeswari Bajji",
+      "Khang Pham"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "This project tackles inefficient food bank distribution by replacing arbitrary equal splits with a needs-weighted data model, ensuring fixed donation pools directly match local food insecurity.",
+    "coverImage": "/projects/2026-food-bank-allocation.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1nz9CN-g-c1Zqf76Op50BN2bPSJoglupr",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-public-digital-queues",
+    "title": "Mechanism Design for Public Digital Queues in Price-Controlled Systems",
+    "team": [
+      "Arpit Pratap Singh"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "Every scarce public resource eventually attracts strategic behaviour. Pretending otherwise is policy by wishful thinking. China is a utopia if one wants to study these complex interactions.",
+    "coverImage": "/projects/2026-public-digital-queues.webp",
+    "projectUrl": "https://drive.google.com/file/d/16PXdYd7BYj0sEqC6Ryl7umaWD8EJJNxU/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-belief-vector-field",
+    "title": "Belief Vector Field under AI alignment",
+    "team": [
+      "Partha Pratim Saha"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "This project introduces Believe-LLMs, an alignment-first open-source scientific framework that monitors intrinsic geometric signals inside transformer-based models layer-by-layer.",
+    "coverImage": "/projects/2026-belief-vector-field.webp",
+    "projectUrl": "https://drive.google.com/file/d/1tKy9jXPHec2BU3aSvTqgZZFNu5moawxV/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-dubai-flood-risk",
+    "title": "Dubai Flash Flood Risk Predictor",
+    "team": [
+      "Owen Pereira"
+    ],
+    "causeArea": "climate-change",
+    "edition": "HIMPact Hacks '26",
+    "description": "My project tackles flood risk safety in Dubai by analysing rainfall, drainage, elevation, traffic and flood history to identify danger zones and give clear driving and safety advice.",
+    "coverImage": "/projects/2026-dubai-flood-risk.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1NntEiKj7ACubE5ljGZT4SdUs8tnKvS3p?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-falsified-antimalarials",
+    "title": "A Convolutional Neural Network for Classifying Spectral Signatures of Falsified and Substandard Antimalarials",
+    "team": [
+      "Hridayesh Khetan",
+      "Rahil Vishal Maniar",
+      "Abraar Ahmed Razeen"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Fake and substandard antimalarials cause preventable deaths and accelerate drug resistance. Our CNN identifies these compromised pills from NIR spectra to remove them from circulation.",
+    "coverImage": "/projects/2026-falsified-antimalarials.webp",
+    "projectUrl": "https://docs.google.com/document/d/1ejwOGGGnrqAdMJm0IK1WhSyYYLJFr9Nb/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-wastewater-training",
+    "title": "A simulation-based engineering training platform for wastewater networks",
+    "team": [
+      "Wen Lin",
+      "Aakarsh Munnangi",
+      "Elvis Lamptey"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "Wastewater utilities struggle to quantify overflow risk and compare mitigation costs consistently. This project provides clear equations linking risk, cost, and performance to guide decisions.",
+    "coverImage": "/projects/2026-wastewater-training.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1_YQ-B39-iuhpKXK5_D44IFNNQ22VB1od94TwGFATCOg/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-ai-misalignment-future",
+    "title": "What will AI misalignment look like in the future?",
+    "team": [
+      "Charlie Hillman"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "The consequences of AI misalignment and how we can help. Very large cause area in website rankings and a few incidents in the news recently.",
+    "coverImage": "/projects/2026-ai-misalignment-future.webp",
+    "projectUrl": "https://drive.google.com/file/d/1cbvMwD4mdDLTDArE9kuCo2i0wZR4kbBy/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-nudge-dont-destroy",
+    "title": "Nudge don't Destroy",
+    "team": [
+      "Murtaza Memon",
+      "Navjot Singh"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "A method to prevent the over-saturation of Low Earth Orbit, averting global infrastructure failure and ensuring humanity retains access to space.",
+    "coverImage": "/projects/2026-nudge-dont-destroy.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1UMCQWzxHgaFatqVpxRR3wSxE8weWPXRR-Xb7VcllT8c/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-school-mental-health",
+    "title": "How should limited school mental-health support be allocated to minimise student harm?",
+    "team": [
+      "Shruthi Kannan"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "My project tackles how limited mental-health support can be allocated fairly to students most at risk of deterioration. This matters because delays can worsen wellbeing and deepen inequality.",
+    "coverImage": "/projects/2026-school-mental-health.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1uhEOCtUeGKivyW5kZx_ViW7aqsise_ST?usp=drive_link",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-paddy-rice-mitigation",
+    "title": "Mitigation of Paddy Rice Production",
+    "team": [
+      "Triaksha Bahu"
+    ],
+    "causeArea": "climate-change",
+    "edition": "HIMPact Hacks '26",
+    "description": "My project tackles the problem of greenhouse gases being emitted from rice farming, and looks at optimising alternative ways.",
+    "coverImage": "/projects/2026-paddy-rice-mitigation.webp",
+    "projectUrl": "https://docs.google.com/document/d/1Ay88q6VTcadC8F_wVvy4b0bfaUOWyPwl4CGYUDmw9vw/edit",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-antivenomics",
+    "title": "Antivenomics — A Budget-Optimal Allocation Model For India's 58,000 Annual Snakebite Deaths",
+    "team": [
+      "Aaron Qin"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Within global health, 58K Indians die from snakebite every year, yet most cases are preventable with $7 of antivenom. It's one of the world's biggest killers yet it receives little funding.",
+    "coverImage": "/projects/2026-antivenomics.webp",
+    "projectUrl": "https://drive.google.com/file/d/1gQ3n3IiOQhQV10_TKfob3udMabAoYFV4/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-sahel-health-access",
+    "title": "Sahel Health Access Optimizer",
+    "team": [
+      "Maimouna Tougoutcho Coulibaly"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Millions in the Sahel lack timely access to healthcare. I optimize where new clinics should be built to maximize population coverage with limited resources.",
+    "coverImage": "/projects/2026-sahel-health-access.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1_USooQ2cnBbAusSljS9Ea0eUIk1n6oun?usp=drive_link",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-rsa-vulnerabilities",
+    "title": "Deciphering ciphers: mitigating RSA vulnerabilities",
+    "team": [
+      "Jivisha Patil"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "RSA remains critical in billions of systems, so preventing weak key generation is essential. Vulnerabilities like ROCA show the need for stronger protection during the transition to PQC.",
+    "coverImage": "/projects/2026-rsa-vulnerabilities.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1vZ3fl6aRy5jy_EEjihUyUkopSfy-W2iW03ZBco9wzEA/edit",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-conflict-zone-education",
+    "title": "Cost-Effectiveness of Emergency Digital Infrastructure in Conflict Zones",
+    "team": [
+      "Retaj Ashour"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "Educational disruption in conflict zones loses millions of schooling hours. We model low-cost digital infrastructure ($95/student) to recover 75% of learning and protect human capital (9-12x ROI).",
+    "coverImage": "/projects/2026-conflict-zone-education.webp",
+    "projectUrl": "https://docs.google.com/document/d/1OhUA51rYVh2RvQDI2ckr007q6-e5XqQ77GW-CNXYtCY/edit?usp=drivesdk",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-arithmophobia",
+    "title": "Arithmophobia in Egyptian Classrooms: Causes and Solutions of Math Anxiety in Elementary Students",
+    "team": [
+      "Mahmoud Mohamed"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "Mathematics anxiety is a specific form of anxiety that impairs students' performance, well-being, and long-term educational outcomes, particularly when it begins in early schooling.",
+    "coverImage": "/projects/2026-arithmophobia.webp",
+    "projectUrl": "https://docs.google.com/document/d/12cDqVIwDiVB05XxxsZkAQnP7cJ1ug3E_pB9cGMNRtwI/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-us-eu-trade-war",
+    "title": "Game-Theoretic Analysis of US-EU trade war",
+    "team": [
+      "Samuel Ding"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "My project aims to make clearer the motivations behind the trade conflicts between the United States and the European Union and propose a mechanism to reduce impact.",
+    "coverImage": "/projects/2026-us-eu-trade-war.webp",
+    "projectUrl": "https://drive.google.com/file/d/1I_8-OWDINNSt4UvN-zfHpfM5cTiT2JJC/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-coastal-microplastics",
+    "title": "Predicting Coastal Microplastic Accumulation using Shallow Water Navier Stokes Equations",
+    "team": [
+      "Saharsh Gaurishetti",
+      "Anjali Patel",
+      "Medhansh Yamsani"
+    ],
+    "causeArea": "climate-change",
+    "edition": "HIMPact Hacks '26",
+    "description": "A lightweight, transparent model estimating wind effects on coastal microplastic accumulation. Offers free, scenario-based guidance for organisations lacking ocean forecasting tools.",
+    "coverImage": "/projects/2026-coastal-microplastics.webp",
+    "projectUrl": "https://drive.google.com/file/d/1D_E1XLU9m22tETD7jByXEJBkhgXBM-cC/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-hospital-beds-uk",
+    "title": "Tackling hospital bed scarcity in the UK",
+    "team": [
+      "Stephanie Ogburie",
+      "Rachel Mustapha"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Our project tackles the issue of there not being enough hospital beds within hospitals in the UK whilst patient demands increase, taking a statistical angle to minimise the issue.",
+    "coverImage": "/projects/2026-hospital-beds-uk.webp",
+    "projectUrl": "https://docs.google.com/document/d/1W5QxaG0uzXhyDID6wTYxEhSIwlYCQyNaUXQl4xrlAOE/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-educonnect",
+    "title": "EduConnect",
+    "team": [
+      "Adalynn Le",
+      "Uma Srolovich",
+      "Phi Enderton"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "Education is free, but not all education is equal. 53% of top-college students are from top 20% neighborhoods by income. 6% are from bottom 20%. Degrees double income, causing generational inequality.",
+    "coverImage": "/projects/2026-educonnect.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1BI_P-e6cJHBhgAO1IGfM6wRjqMjIhLkvhw_VJ2ggock/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-aqua-guard",
+    "title": "Aqua-Guard",
+    "team": [
+      "Mariam Mostafa"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Many rural communities cannot easily check if their water is safe. Lab testing is slow and expensive, so people often drink contaminated water, causing preventable diseases and health risks.",
+    "coverImage": "/projects/2026-aqua-guard.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1OzYUYUrJKKKW9zltEAFOMKgpYONJb012",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-urban-heat-risk",
+    "title": "Quantifying Urban Heat Risk: A Composite Index Combining Thermal Hazards and Population Vulnerability",
+    "team": [
+      "Mingwei Patrick"
+    ],
+    "causeArea": "climate-change",
+    "edition": "HIMPact Hacks '26",
+    "description": "Urban areas face amplified heat risk from the urban heat island effect. Identifying where residents are most endangered supports targeted long-term cooling measures and public-health protection.",
+    "coverImage": "/projects/2026-urban-heat-risk.webp",
+    "projectUrl": "https://docs.google.com/document/d/1vMnIQ9JAfXAE2SZgV0voBMRbeRXq5gJEpg_VbwZdRjA/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-chicago-hospital-access",
+    "title": "Transit, Access & Equity: Hospital Accessibility Across Chicago",
+    "team": [
+      "Melissa Yin",
+      "Mohammed Naji Haouem",
+      "Jasmine Wang"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "How transport accessibility affects access to healthcare in low-income areas. We are keeping in mind the broader goal of reducing economic inequality by first improving transportation networks.",
+    "coverImage": "/projects/2026-chicago-hospital-access.webp",
+    "projectUrl": "https://docs.google.com/document/d/12_OKZtBoPgELX3t1CL-sk7zwetZA4oiBFLDvkSKNFIE/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-ntd-allocation",
+    "title": "Mathematical Optimization & Statistical Impact in Global Health Allocation",
+    "team": [
+      "Eden Getnet"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Optimizing neglected tropical disease interventions via ILP to maximize life-years saved. It bridges the gap between scarce public health resources and maximum human impact.",
+    "coverImage": "/projects/2026-ntd-allocation.webp",
+    "projectUrl": "https://drive.google.com/file/d/1SOnjcroKNDMR4j7QcsHTFYavKQGU4C8h/view?usp=drivesdk",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-privacy-bit-counter",
+    "title": "PrivacyBitCounter",
+    "team": [
+      "Agharr Azmath",
+      "Abubakar Ehtesham",
+      "Ariful Islam"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "UK social posts reveal clues like age, sex and location. Our checklist estimates how these details combine to identify someone, helping users assess their privacy risk before they share more wisely.",
+    "coverImage": "/projects/2026-privacy-bit-counter.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1-bHWlOLsk1DGG5bOdVbQRai58NyjufkY",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-internet-tower-placement",
+    "title": "How should a limited number of internet towers be placed to maximise population coverage?",
+    "team": [
+      "Amy Casey"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "The project tackles the digital divide across countries which contributes to lower development countries getting less opportunities in education and resources.",
+    "coverImage": "/projects/2026-internet-tower-placement.webp",
+    "projectUrl": "https://docs.google.com/document/d/1gDQxe12u5Rdvzoq68ujvwD3TmDZ4wlidIF3qwP_p__8/edit?usp=drivesdk",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-tb-prison-screening",
+    "title": "Dialing in the machine: Cost-effective AI chest-X-ray screening for tuberculosis in prisons",
+    "team": [
+      "Khushi Singh"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "I had TB for 3 years as a student. My project uses a maths model to find the best AI X-ray screening schedule for prisons, catching hidden TB early and saving lives at $93 per healthy life-year.",
+    "coverImage": "/projects/2026-tb-prison-screening.webp",
+    "projectUrl": "https://drive.google.com/file/d/1BRA-C5Hakt13EXpaFKM1lfz3JG4_TJQ6/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-pandemic-surveillance-cost",
+    "title": "Estimating the Cost-Effectiveness of Pandemic Surveillance Systems",
+    "team": [
+      "Jamal Lawal"
+    ],
+    "causeArea": "biosecurity",
+    "edition": "HIMPact Hacks '26",
+    "description": "Pandemics are simultaneously catastrophic, recurrent, and systematically underinvested against. COVID-19 caused an estimated 14.9 million excess deaths in 2020–2021 alone.",
+    "coverImage": "/projects/2026-pandemic-surveillance-cost.webp",
+    "projectUrl": "https://drive.google.com/file/d/1RwflXg7zUBeqXc09nMS90DCMlssS-mIS/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-quakenet",
+    "title": "QuakeNet",
+    "team": [
+      "Advik Singh",
+      "Samuel Hana",
+      "Aiden Ma"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "QuakeNet models Indonesia's risk chain and cascading hazards affecting local communities, revealing dangers standard single-event models miss.",
+    "coverImage": "/projects/2026-quakenet.webp",
+    "projectUrl": "https://drive.google.com/file/d/1-ql-3FbCJP0Gj1nFzVNjAJn2OCQ5vaKG/view",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-does-the-ice-kill",
+    "title": "Does the ice actually kill?",
+    "team": [
+      "Ahmed Naser"
+    ],
+    "causeArea": "animal-welfare",
+    "edition": "HIMPact Hacks '26",
+    "description": "Farmed shrimp welfare. 440bn are killed each year. Whether ice-slurry slaughter actually kills them changes cost-effectiveness 21x — and no one has measured it. It's a stopwatch.",
+    "coverImage": "/projects/2026-does-the-ice-kill.webp",
+    "projectUrl": "https://drive.google.com/file/d/18bsjshUfohmhNpCC5PAybGiCcRjKjeHf/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-equity-load-shedding",
+    "title": "Equity-Aware Load-Shedding Optimisation",
+    "team": [
+      "King-Spencer Idowu",
+      "Michael Zaah",
+      "Michael Kyekye"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "Traditional power load shedding maximizes raw utility while ignoring vulnerable zones, causing severe societal harm. Our equity-aware tool balances power fairly.",
+    "coverImage": "/projects/2026-equity-load-shedding.webp",
+    "projectUrl": "https://github.com/kingspenceridowu-lang/Equity-Load-Shedding-Optimisation",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-maximedrelief",
+    "title": "MaxiMedRelief",
+    "team": [
+      "Ruhma Naveed"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "In a crisis, health systems are stuck with rising medical demands and limited resources. MERCY optimizes medical capability, allocating resources where staff, equipment and access join to deliver impact.",
+    "coverImage": "/projects/2026-maximedrelief.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1wlxvfgv259nfGofRXOFz27YT4f3Mf2_2?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-amr-hospitals",
+    "title": "Where Mathematics Meets Medicine: Spectral Graph Theory and Dose-Response Modelling to Tackle AMR in Hospitals",
+    "team": [
+      "Vihaan Zawar",
+      "Chaitanya Nallani",
+      "Avyukth Vadyar"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "AMR kills millions and threatens modern medicine. Hospitals lack proactive ways to stop super-spreaders. We tackle this by using math to target isolation before outbreaks begin.",
+    "coverImage": "/projects/2026-amr-hospitals.webp",
+    "projectUrl": "https://docs.google.com/document/d/1xUQjBhuyUV9C3cuyOAYVXSlRJ1XyeZM_aIMxwmq6Lko/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-surveillance-debt",
+    "title": "Surveillance Debt",
+    "team": [
+      "Devansh Malhotra"
+    ],
+    "causeArea": "biosecurity",
+    "edition": "HIMPact Hacks '26",
+    "description": "Shared surveillance infrastructure is eroding: U.S. measles hit a 35-year high as MMR coverage falls, while efficient H5N1 testing still misses 2-9% of real cases. One root cause, two live crises.",
+    "coverImage": "/projects/2026-surveillance-debt.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/14q3QXeFWe4ex2gVW7kpcEHHt5XsKrgd6j1d4T3r9XBc/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-scoring-llms-for-policy",
+    "title": "Scoring LLMs for Policy: A Mathematical Framework for Proactive Auditing of LLMs",
+    "team": [
+      "Hengda Lin",
+      "Zachariya Vaseem"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "Regulators have no way of checking an LLM's safety before mass use. This paper proposes a mathematical framework for analysing LLMs.",
+    "coverImage": "/projects/2026-scoring-llms-for-policy.webp",
+    "projectUrl": "https://docs.google.com/document/d/1Cc-3UIcZH83W7Y-UztCKlmIzJHal9y67NNpvtRUKT0k/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-gridshield-ai",
+    "title": "GridShield AI",
+    "team": [
+      "George Oppong Boateng"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "GridShield AI uses mathematical optimization and AI to fairly distribute limited electricity, protecting hospitals and critical infrastructure while reducing blackouts during power shortages.",
+    "coverImage": "/projects/2026-gridshield-ai.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/1AuynIy0tK9W6CkXFy1jtbZHfD4yPbrN6?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-chakra",
+    "title": "Chakra",
+    "team": [
+      "Fátima Chávez",
+      "Ximena Gamero"
+    ],
+    "causeArea": "climate-change",
+    "edition": "HIMPact Hacks '26",
+    "description": "Climate variability makes planting decisions increasingly uncertain for small farmers in Cusco, Peru, who lack accessible decision-support tools based on environmental data.",
+    "coverImage": "/projects/2026-chakra.webp",
+    "projectUrl": "https://drive.google.com/file/d/10wJ4XwYDFW3C_DCEVxcDJBnDZae08a2B/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-earthquake-evacuation",
+    "title": "Evacuation Route for Earthquake",
+    "team": [
+      "Beril Bolat",
+      "Kawacha Pokharel",
+      "Henrique"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "We built a system that uses graph theory to optimize emergency vehicle routes in Tokyo after earthquakes by dynamically recalculating the safest and fastest paths.",
+    "coverImage": "/projects/2026-earthquake-evacuation.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1_kNCQT7b8ziG2_gLNI2b0DZmkSP8qAxq6ZoinrNTV9s/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-proximity-tumor",
+    "title": "Proximity: A Tumor Microenvironment Spatial Architecture Analysis Tool",
+    "team": [
+      "Christine Li"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Melanoma pathology counts T-cells but neglects their distance from tumor cells, but spatial exclusion by stromal barriers predicts immune evasion better than cell count alone.",
+    "coverImage": "/projects/2026-proximity-tumor.webp",
+    "projectUrl": "https://docs.google.com/document/d/1atfGo4ypysAHXAOh5ZgqJ1URCqYAkwE2Kj77ktF3lZI/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-antivenom-reserve",
+    "title": "Antivenom Reserve: A screening rule for splitting scarce medical stock between regions",
+    "team": [
+      "Jack Stubbs"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Antivenom shortages leave Kenyan patients without timely treatment. This project tests how to place the same fixed stock more fairly and efficiently across regions.",
+    "coverImage": "/projects/2026-antivenom-reserve.webp",
+    "projectUrl": "https://drive.google.com/file/d/1qExZxrt56Q80Chp-3nVpy8VNlnhd1Rpt/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-biological-threat-matrix",
+    "title": "The 6-Dimensional Biological Threat Matrix",
+    "team": [
+      "Kanishk Kumar",
+      "Kevin Kushova"
+    ],
+    "causeArea": "biosecurity",
+    "edition": "HIMPact Hacks '26",
+    "description": "The core problem this project addresses is the severe misalignment in how global philanthropic and institutional resources are allocated toward biological threats.",
+    "coverImage": null,
+    "projectUrl": "https://drive.google.com/drive/folders/1jwflv9dauL0ps3bEz5sf-RJq_DqtAf7l?usp=drive_link",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-road-risk",
+    "title": "Road Risk",
+    "team": [
+      "Pratham Balaji"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "Interactive road-risk map for loading OpenStreetMap roads, sampling TomTom traffic, spotting congestion, and comparing route exposure.",
+    "coverImage": "/projects/2026-road-risk.webp",
+    "projectUrl": "https://drive.google.com/file/d/1-pSGhuUwx8b66-EXt2Tjz9ps5-yiEQQz/view?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-meshtriage",
+    "title": "MeshTriage",
+    "team": [
+      "Chakkarapani Vasudev Ramana",
+      "Azhaan Ahmad",
+      "Ashish Paul"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "Natural disasters cripple communication, leaving victims unable to call for help and responders without real-time information, delaying rescue and increasing preventable deaths.",
+    "coverImage": "/projects/2026-meshtriage.webp",
+    "projectUrl": "https://drive.google.com/drive/folders/15cMUALuBUxPcUw7Ih0XVdyKm2SjQhB4y?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-cardiac-risk-sri-lanka",
+    "title": "Calibrating Cardiac Risk Using a Medicine Allocation Model for Sri Lankans",
+    "team": [
+      "Abinaya Ramachandran"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "Cardiovascular disease models currently use Western data which is not relevant for South Asian populations due to genetic and environmental factors which means that they are more susceptible to CVDs.",
+    "coverImage": "/projects/2026-cardiac-risk-sri-lanka.webp",
+    "projectUrl": "https://docs.google.com/document/d/1rCOSDN36sNLy5YW40hZWF9Cly0REf3q4/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-neonatal-facility-placement",
+    "title": "A Prototype Optimization Model for Neonatal Healthcare Facility Placement",
+    "team": [
+      "Hadia Dawodi"
+    ],
+    "causeArea": "global-health",
+    "edition": "HIMPact Hacks '26",
+    "description": "An optimization model for siting neonatal healthcare facilities. (Submitted without a written summary — description pending from the team.)",
+    "coverImage": "/projects/2026-neonatal-facility-placement.webp",
+    "projectUrl": "https://canva.link/idv33a3ioy785gu",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-interpretability-residual",
+    "title": "The Interpretability Residual: measuring what AI audits miss",
+    "team": [
+      "Samridhi Bharti"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "AI safety relies on interpretability, yet current metrics don't quantify unexplained model behaviour. This project proposes a decision framework for measuring that uncertainty.",
+    "coverImage": "/projects/2026-interpretability-residual.webp",
+    "projectUrl": "https://docs.google.com/document/d/1w-bCz9zmRDE-CmK1QYY9I90BaEbwHn9kZKsHy2yY4l8/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-data-centre-impact",
+    "title": "Data Center Environmental Impact Prediction",
+    "team": [
+      "Kshipra Kashyap"
+    ],
+    "causeArea": "climate-change",
+    "edition": "HIMPact Hacks '26",
+    "description": "The project measures the impact varied types of data centers would have in high resource-stressed regions.",
+    "coverImage": "/projects/2026-data-centre-impact.webp",
+    "projectUrl": "https://docs.google.com/document/d/1KjvV9-9o4POhnSkHzDJGgl6OZnbutQPJ2EITZ0-080Q/edit",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-mapping-inclusion",
+    "title": "Mapping Inclusion",
+    "team": [
+      "Zane Shah",
+      "Eesa Syeed"
+    ],
+    "causeArea": "institutional-resilience",
+    "edition": "HIMPact Hacks '26",
+    "description": "28% of UK mosques lack women's spaces. Current decisions for where new mosques are built are made without considering locations where they could most benefit the female Muslim community.",
+    "coverImage": "/projects/2026-mapping-inclusion.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1TOF7V7WFtweBwzIy-rlqde7SXaG4jxbd/edit?usp=drivesdk",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-wildfire-risk-nn",
+    "title": "Neural Network To Predict Wildfire Risk",
+    "team": [
+      "India Puig Souto"
+    ],
+    "causeArea": "climate-change",
+    "edition": "HIMPact Hacks '26",
+    "description": "With risks of wildfires increasing due to climate change and extreme weather I aimed in this project to find a way to predict high risk periods of time using NASA data to help prepare.",
+    "coverImage": "/projects/2026-wildfire-risk-nn.webp",
+    "projectUrl": "https://docs.google.com/presentation/d/1j-wGHXylcZp0G7ChN7vOLVru4FRVcKxlOUGDgrrrZRo/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  },
+  {
+    "id": "2026-ai-safety-funding",
+    "title": "AI Safety Funding Is Misaligned with Catastrophic Risk",
+    "team": [
+      "Ahmed Wez"
+    ],
+    "causeArea": "ai-safety",
+    "edition": "HIMPact Hacks '26",
+    "description": "Improving how AI safety funding is prioritized by comparing current investments with expert assessments of catastrophic AI risk.",
+    "coverImage": "/projects/2026-ai-safety-funding.webp",
+    "projectUrl": "https://docs.google.com/document/d/1tXz3Z-l0u6GtmCo0mKpwjXZb2abal7-kgbJBlpcKNig/edit?usp=sharing",
+    "videoUrl": null,
+    "award": null
+  }
+]

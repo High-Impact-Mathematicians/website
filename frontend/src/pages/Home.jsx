@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import EASectionHeader from "../components/EASectionHeader";
 import EACard from "../components/EACard";
+import ExampleProjects from "../components/ExampleProjects";
 import Modal from "../components/Modal";
 import { CAUSE_AREAS } from "../data/causeAreas";
 
@@ -591,54 +592,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HIMPACT HACKS — LAUNCH EVENT / ENTRY POINT */}
-      <section className="bg-cream dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800" data-testid="himpact-hacks-section">
-        <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-16 md:py-24">
-          <div className="relative overflow-hidden rounded-2xl bg-stone-900 dark:bg-stone-950 border border-stone-800 px-8 md:px-14 py-12 md:py-16">
-            <div
-              aria-hidden
-              className="absolute font-serif-display font-medium select-none pointer-events-none text-[280px] md:text-[420px] leading-none text-orange-500/[0.06] -right-10 top-1/2 -translate-y-1/2"
-            >
-              λ
-            </div>
-            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-              <div className="lg:col-span-8">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="font-mono-tag text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-stone-900 bg-orange-400 px-2.5 py-1 rounded">
-                    Start here · our launch event
-                  </span>
-                  <span className="font-mono-tag text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-orange-300 border border-orange-400/40 px-2.5 py-1 rounded">
-                    24–26 July 2026
-                  </span>
-                </div>
-                <h2 className="font-serif-display text-4xl md:text-6xl tracking-tight leading-[1.02] text-white">
-                  HIMPact Hacks
-                </h2>
-                <p className="mt-5 text-stone-300 text-[16px] md:text-lg leading-[1.7] max-w-2xl">
-                  The entry point to our community. Over a single weekend, school and university students take a serious problem in a high-impact field and use mathematics to move it forward, then carry that work into everything we run next. Choose a cause, build a project, and compete for prizes.
-                </p>
-              </div>
-              <div className="lg:col-span-4 lg:justify-self-end flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto">
-                <a
-                  href="https://forms.gle/7re5qsqdorN7y9CV9"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3.5 text-sm font-medium tracking-wide transition-colors rounded-full"
-                  data-testid="himpact-hacks-cta"
-                >
-                  Register now <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-                <Link
-                  to="/take-action"
-                  className="inline-flex items-center justify-center gap-2 border border-stone-600 text-stone-100 hover:bg-white hover:text-stone-900 px-6 py-3.5 text-sm font-medium tracking-wide transition-colors rounded-full"
-                >
-                  How it works
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* EXAMPLE PROJECTS — replaced the HIMPact Hacks '26 sign-up block, which
+          went stale once the event ran on 24–26 July 2026. */}
+      <ExampleProjects />
 
       {/* INSPIRED BY */}
       <section className="bg-white dark:bg-stone-950 border-t border-stone-200 dark:border-stone-800">
