@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProjectsBoard from "../components/ProjectsBoard";
-import { PROJECTS } from "../data/projects";
 import { ArrowUpRight } from "lucide-react";
 
 const DISCORD_URL = "https://discord.gg/yCWmXRwxdW"; // HIM Discord invite
@@ -49,8 +48,7 @@ export default function TakeAction() {
               cared about into a model, a simulation, a data analysis, or an original piece of
               research. Mentors and expert seminars ran throughout, and the weekend closed with
               Demo Day, where judges picked first, second and third place alongside a set of
-              honourable mentions. The {PROJECTS.length} projects below are the permanent archive
-              of what they made.
+              honourable mentions.
             </p>
             <div className="mt-8">
               <a
